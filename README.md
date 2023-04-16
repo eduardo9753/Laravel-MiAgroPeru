@@ -1,6 +1,6 @@
 # Plataforma MiAgroPeru
 
-Plataforma orientada hacia los agricultores Peruanos en donde podran subrir sus productos a la Web y puedan ser visibles para cualquier persona interesada en comprar quellos productos.
+Plataforma orientada hacia los agricultores Peruanos en donde podran subrir sus productos a la Web y puedan ser visibles para cualquier persona interesada en comprar aquellos productos.
 
 Construida en laravel 8, Tailwind CSS y Base de Datos MySql 
 
