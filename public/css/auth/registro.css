@@ -1,0 +1,45 @@
+/*ESTILOS REGISTER USUARIO*/
+.contenido-registro-usuario {
+    padding: 15px 0px 40px 0px;
+}
+
+.registro-usuario-imagen img{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+
+}
+
+.registro-usuario-formulario {
+    width: 30%;
+}
+
+.registro-usuario-formulario .label-registro{
+    margin: 15px 0px 3px 0px;
+    color: var(--green);
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.contenido-registro-usuario .boton-registro-usuario {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 5px;
+    background-color: var(--green);
+    color: var(--blanco);
+
+}
+
+.contenido-registro-usuario .caja-registro-usuario{
+    border: 1px solid var(--green);
+}
+
+.error-registro-usuario{
+    width: 100%;
+    background-color: var(--rojo);
+    padding: 2px;
+    text-align: center;
+    color: var(--blanco);
+    border-radius: 10pc;
+    margin-top: 4px;
+}

@@ -1,0 +1,24 @@
+
+/*ARRANCA DESDE EL MINIMO 0PX DE ANCHO HASTA EL MAXIMO DE 460PX DE ANCHO*/
+@media (min-width: 0px) and (max-width: 800px){ 
+    .publicacion-usuario .publicacion-imagen img {
+        margin-top: 40px;
+        width: 130px;
+        height: 130px;
+    }
+
+    .publicacion .img-publicacion {
+        width: 200px;
+        height: 200px;
+    }
+
+    .center{ 
+        flex-direction: column;
+    }
+
+    .grid-cuatro {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+

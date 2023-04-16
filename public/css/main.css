@@ -1,0 +1,203 @@
+
+
+/*ESTILOS FRANJA*/
+.franja{
+    background-color: var(--green);
+    width: 100%;
+    height: 25%;
+    padding: 0.3rem;
+}
+
+/*ESTILOS REDES SOCIALES*/
+.facebook , .instagram , .whatsaap{ color: white; padding: 0.5rem;}
+
+/*ESTILOS TITULO FRANJA*/
+.titulo-franja-logo { 
+    font-size: 30px; 
+    font-weight: 700; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: var(--blanco);
+}
+
+
+/*ESTILOS NAVEGACION*/
+.navegacion{
+    padding: 0;
+    margin: 0;
+    padding: .4rem .2rem;
+    background-color:var(--gris);
+    list-style: none;
+}
+
+/*ESTILOS NAV LI*/
+.navegacion .link-menu {
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-weight: 600;
+   font-size: 15px;
+   
+}
+
+/*ESTILOS NAV LI A*/
+.navegacion .link-menu .link{
+    color: var(--negro);
+    padding: 0px 15px;
+    display: block;
+}
+
+
+/*ESTILOS IMAGEN LOGO*/
+.logo img {
+    width: 45px;
+    height: 45px;
+}
+
+.img-usuario-comentario { 
+    width: 20px;
+    height: 20px;
+}
+
+/*ESTILOS header*/
+.header {
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)), url(../img/carousel/carousel_1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.header .header-descripcion{
+    padding: 4rem;
+}
+
+.header .header-descripcion h1{
+   color: var(--blanco);
+   font-size: 44px;
+   font-weight: bold;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+}
+
+.header .header-descripcion p{
+    color: var(--blanco);
+    font-size: 28px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+ }
+ 
+
+
+
+/*Nosotros*/
+.nosotros {
+    padding: 90px 0px 90px 0px;
+}
+
+.nosotros .check-nosotros i{
+   color: var(--green);
+   font-size: 25px;
+   padding: 0;
+}
+
+.nosotros .imagen-nosotros img{
+    width: 450px;
+    height: 300px;
+    border-radius: 10px; 
+}
+
+
+
+/*ESTILOS FONDO AGRICULTURA*/
+.fondo-agricultura{
+   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)),  url(../img/fondo-agricultura.jpg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover; 
+   background-attachment: fixed;
+}
+
+
+.fondo-agricultura .titulo-fondo-agricultura{
+  text-align: center;
+  font-size: 40px;
+  color: var(--blanco);
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.fondo-agricultura .titulo-fondo-agricultura span {
+    font-weight: bold;
+    font-size: 45px;
+    color: var(--green);
+}
+
+
+
+
+/*ESTILOS PUBLICACION (caja-usuario - publicacion - aside)*/
+
+/*CAJA USUARIO*/
+.publicacion .caja-usuario-publicacion{
+    background-color: var(--gris);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.publicacion .caja-usuario-publicacion .img-caja-usuario-publicacion{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+
+
+/*PUBLICACIONES*/
+.publicacion .img-publicacion{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.publicacion .titulo-publicacion{
+    text-align: center;
+    font-size: 2rem;
+    padding: 50px 0px 50px 0px;
+}
+
+.publicacion .contenido-publicacion{
+    padding: .7rem;
+    background-color: var(--gris);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.tamanio-publicacion { width: 33.3%;}
+
+
+/*ASIDE*/
+
+
+
+
+
+/*ESTILOS PUBLICACIONES EN MI PERFIL(LO QUE YO HE PUBLICADO)*/
+.mi-publicacion .mi-contenido-publicacion .mi-imagen-publicacion img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.mi-publicacion .my-titulo-publicacion {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.mi-publicacion .mi-contenido-publicacion .mi-descripcion-publicacion .titulo{
+   font-weight: 600;
+}
+
+
+
+/*ESTILOS PARA MOSTRAR PUBLICACION "posts.show"*/
