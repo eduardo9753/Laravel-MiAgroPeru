@@ -39,8 +39,6 @@ HERRAMIENTAS :
 
 
 
-##BASE DE DATOS(MYSQL)
-
 
 
 
