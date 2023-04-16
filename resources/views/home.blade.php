@@ -96,75 +96,76 @@
     <section class="publicacion">
         <div class="mi-contenedor">
             <div>
-                <h3 class="titulo-publicacion">PUBLICACION RECIENTE</h3>
+                <h3 class="titulo-publicacion">PUBLICACION RECIENTE</p>
+                </h3>
             </div>
             <div class="center">
                 <div class="contenido-publicacion tamanio-publicacion">
-                    @if ($ultimoPost)
-                        @foreach ($ultimoPost as $ultimoPost)
-                            <div class="descripcion-imagen">
-                                <img class="imagen-home" src="{{ asset('uploads/' . $ultimoPost->imagen) }}" alt="">
-                                <div class="flex-between py-3">
-                                    <div class="flex">
-                                        <span class=""><i class='bx bxs-heart' style='color:#ef0d0d'></i></span>
+                    @if ($posts)
+                        <div class="descripcion-imagen">
+                            <img class="imagen-home" src="{{ asset('uploads/' . $posts->imagen) }}" alt="">
+                            <div class="flex-between py-3">
+                                <div class="flex">
+                                    <span class=""><i class='bx bxs-heart' style='color:#ef0d0d'></i></span>
 
-                                        <p>{{ $like }}</p>
+                                    <p>{{ $like }}</p>
 
+                                </div>
+
+                                {{-- PARA CONSULTAS DIRECTAS DE TIPO "SELECT" --}}
+                                {{-- SETEAMOS LA FECHA CON CARBON --}}
+                                {{-- <p> {{ \Carbon\Carbon::parse($posts->fechaRegistroPost)->diffForHumans() --}}</p>
+                                <p>{{ $posts->created_at->diffForHumans() }}</p>
+                            </div>
+                        </div>
+
+                        <div class="descripcion-publicacion">
+                            <div class="flex">
+                                <span class=""><i class='bx bx-user'></i></span>
+                                <a href=" {{ route('posts.index', $posts->user) }}">
+                                    {{ $posts->user->username }}</a>
+                            </div>
+
+                            <div class="flex">
+                                <span class=""><i class='bx bxl-whatsapp' style='color:#23e259'></i></span>
+                                <p class="">{{ $posts->user->celular }}</p>
+                            </div>
+
+                            <div class="flex">
+                                <span class=""><i class='bx bxl-product-hunt' undefined></i></span>
+                                <p>{{ $posts->titulo }}</p>
+                            </div>
+
+                            <div class="flex">
+                                <span class=""><i class='bx bx-dollar'></i></span>
+                                <p>{{ $posts->precio }}</p>
+                            </div>
+
+                            <div class="flex">
+                                <span class=""><i class='bx bx-paragraph'></i></span>
+                                <p>{{ $posts->descripcion }}</p>
+                            </div>
+
+                            <div class="flex">
+                                <span class=""></span>
+                                {{-- PARA CONSULTAS DIRECTAS DE TIPO "SELECT" --}}
+                                {{-- SETEAMOS LA FECHA CON CARBON --}}
+                                {{-- <p> {{ \Carbon\Carbon::parse($posts->fechaRegistroPost)->diffForHumans() }}</p> --}}
+                                <p>{{ $posts->created_at->diffForHumans() }}</p>
+                            </div>
+
+                            <div>
+                                @guest
+                                    <p class="text-center mt-5">Para darle Like - Registrate en el Portal</p>
+                                @endguest
+
+                                @guest
+                                    <div class="text-center my-4">
+                                        <a href="{{ route('register') }}" class="">Quiero Registrarme</a>
                                     </div>
-
-                                    {{-- PARA CONSULTAS DIRECTAS DE TIPO "SELECT" --}}
-                                    {{-- SETEAMOS LA FECHA CON CARBON --}}
-                                    <p> {{ \Carbon\Carbon::parse($ultimoPost->fechaRegistroPost)->diffForHumans() }}</p>
-                                </div>
+                                @endguest
                             </div>
-
-                            <div class="descripcion-publicacion">
-                                <div class="flex">
-                                    <span class=""><i class='bx bx-user'></i></span>
-                                    <a href=" {{ route('posts.index', $ultimoPost->username) }}">
-                                        {{ $ultimoPost->username }}</a>
-                                </div>
-
-                                <div class="flex">
-                                    <span class=""><i class='bx bxl-whatsapp' style='color:#23e259'  ></i></span>
-                                    <p class="">{{ $ultimoPost->celular }}</p>
-                                </div>
-
-                                <div class="flex">
-                                    <span class=""><i class='bx bxl-product-hunt' undefined></i></span>
-                                    <p>{{ $ultimoPost->titulo }}</p>
-                                </div>
-
-                                <div class="flex">
-                                    <span class=""><i class='bx bx-dollar'></i></span>
-                                    <p>{{ $ultimoPost->precio }}</p>
-                                </div>
-
-                                <div class="flex">
-                                    <span class=""><i class='bx bx-paragraph'></i></span>
-                                    <p>{{ $ultimoPost->descripcion }}</p>
-                                </div>
-
-                                <div class="flex">
-                                    <span class=""></span>
-                                    {{-- PARA CONSULTAS DIRECTAS DE TIPO "SELECT" --}}
-                                    {{-- SETEAMOS LA FECHA CON CARBON --}}
-                                    <p> {{ \Carbon\Carbon::parse($ultimoPost->fechaRegistroPost)->diffForHumans() }}</p>
-                                </div>
-
-                                <div>
-                                    @guest
-                                        <p class="text-center mt-5">Para darle Like - Registrate en el Portal</p>
-                                    @endguest
-
-                                    @guest
-                                        <div class="text-center my-4">
-                                            <a href="{{ route('register') }}" class="">Quiero Registrarme</a>
-                                        </div>
-                                    @endguest
-                                </div>
-                            </div>
-                        @endforeach
+                        </div>
                     @else
                         <h2>Registrate en el Portal para Publicar tus Productos</h2>
                     @endif

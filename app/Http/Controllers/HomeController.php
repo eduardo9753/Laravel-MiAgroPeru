@@ -14,7 +14,7 @@ class HomeController extends Controller
     //METODO __invoke : SE MANDA A LLAMAR AUTOMATICAMNETE
     public function __invoke()
     {
-        //CUANDO USAS ESTE METODO LO TIENES QUE RECORRER CON BUCLE FOREACH EN LA VISTA
+        /*CUANDO USAS ESTE METODO LO TIENES QUE RECORRER CON BUCLE FOREACH EN LA VISTA
         $dataProducto = DB::select('SELECT 
         p.id AS "idPost",
         p.titulo AS "titulo",
@@ -31,7 +31,7 @@ class HomeController extends Controller
           
         FROM posts p 
         INNER JOIN users usu ON usu.id = p.user_id
-        ORDER BY p.id DESC LIMIT 1');
+        ORDER BY p.id DESC LIMIT 1');*/
 
 
         //CUANDO USAS ELOQUENT SOLO PASAS LA VARIABLE FECHA Y DATOS($data->camapoTabla)
@@ -41,8 +41,9 @@ class HomeController extends Controller
 
        
         return view('home', [
-            'ultimoPost' => $dataProducto,
-            'like' => $like
+           // 'ultimoPost' => $dataProducto,
+            'like' => $like,
+            'posts' => $posts
         ]);
     }
 }
