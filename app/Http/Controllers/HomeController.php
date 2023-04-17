@@ -38,7 +38,7 @@ class HomeController extends Controller
         //CUANDO USAS ELOQUENT SOLO PASAS LA VARIABLE FECHA Y DATOS($data->camapoTabla)
         //$posts = Post::find(DB::table('posts')->max('id'));
         //CONTANDO LOS LIKES EN FUNCION DEL ULTIMO POST REGISTRADO EN LA BD
-        $like = DB::table('likes')->where('post_id', $ultimoPost->id)->count();
+        $like = DB::table('likes')->where('post_id', optional($ultimoPost->id))->count();
 
        
        
