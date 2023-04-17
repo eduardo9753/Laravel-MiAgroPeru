@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function __invoke()
     {
         /*CUANDO USAS ESTE METODO LO TIENES QUE RECORRER CON BUCLE FOREACH EN LA VISTA
-        $dataProducto = DB::select('SELECT 
+        $ultimoPost = DB::select('SELECT 
         p.id AS "idPost",
         p.titulo AS "titulo",
         p.precio AS "precio",
@@ -33,17 +33,18 @@ class HomeController extends Controller
         INNER JOIN users usu ON usu.id = p.user_id
         ORDER BY p.id DESC LIMIT 1');*/
 
+        $ultimoPost = Post::select('*')->orderBy('id','desc')->first();
 
         //CUANDO USAS ELOQUENT SOLO PASAS LA VARIABLE FECHA Y DATOS($data->camapoTabla)
-        $posts = Post::find(DB::table('posts')->max('id'));
+        //$posts = Post::find(DB::table('posts')->max('id'));
         //CONTANDO LOS LIKES EN FUNCION DEL ULTIMO POST REGISTRADO EN LA BD
-        $like = DB::table('likes')->where('post_id', $posts->id)->count();
+        $like = DB::table('likes')->where('post_id', $ultimoPost->id)->count();
 
        
+       
         return view('home', [
-           // 'ultimoPost' => $dataProducto,
-            'like' => $like,
-            'posts' => $posts
+            'ultimoPost' => $ultimoPost,
+            'like' => $like
         ]);
     }
 }

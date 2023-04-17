@@ -96,14 +96,14 @@
     <section class="publicacion">
         <div class="mi-contenedor">
             <div>
-                <h3 class="titulo-publicacion">PUBLICACION RECIENTE</p>
-                </h3>
+                <h3 class="titulo-publicacion">PUBLICACION RECIENTE </h3>
             </div>
             <div class="center">
                 <div class="contenido-publicacion tamanio-publicacion">
-                    @if ($posts)
+                    @if ($ultimoPost)
+                        {{-- @foreach ($ultimoPost as $ultimoPost) --}}
                         <div class="descripcion-imagen">
-                            <img class="imagen-home" src="{{ asset('uploads/' . $posts->imagen) }}" alt="">
+                            <img class="imagen-home" src="{{ asset('uploads/' . $ultimoPost->imagen) }}" alt="">
                             <div class="flex-between py-3">
                                 <div class="flex">
                                     <span class=""><i class='bx bxs-heart' style='color:#ef0d0d'></i></span>
@@ -114,44 +114,43 @@
 
                                 {{-- PARA CONSULTAS DIRECTAS DE TIPO "SELECT" --}}
                                 {{-- SETEAMOS LA FECHA CON CARBON --}}
-                                {{-- <p> {{ \Carbon\Carbon::parse($posts->fechaRegistroPost)->diffForHumans() --}}</p>
-                                <p>{{ $posts->created_at->diffForHumans() }}</p>
+                                {{-- <p> {{ \Carbon\Carbon::parse($ultimoPost->fechaRegistroPost)->diffForHumans() }}</p> --}}
+                                <p>{{ $ultimoPost->created_at->diffForHumans() }}</p>
                             </div>
                         </div>
 
                         <div class="descripcion-publicacion">
                             <div class="flex">
                                 <span class=""><i class='bx bx-user'></i></span>
-                                <a href=" {{ route('posts.index', $posts->user) }}">
-                                    {{ $posts->user->username }}</a>
+                                <a href=" {{ route('posts.index', $ultimoPost->user) }}">
+                                    {{ $ultimoPost->user->username }}</a>
                             </div>
 
                             <div class="flex">
                                 <span class=""><i class='bx bxl-whatsapp' style='color:#23e259'></i></span>
-                                <p class="">{{ $posts->user->celular }}</p>
+                                <p class="">{{ $ultimoPost->user->celular }}</p>
                             </div>
 
                             <div class="flex">
                                 <span class=""><i class='bx bxl-product-hunt' undefined></i></span>
-                                <p>{{ $posts->titulo }}</p>
+                                <p>{{ $ultimoPost->titulo }}</p>
                             </div>
 
                             <div class="flex">
                                 <span class=""><i class='bx bx-dollar'></i></span>
-                                <p>{{ $posts->precio }}</p>
+                                <p>{{ $ultimoPost->precio }}</p>
                             </div>
 
                             <div class="flex">
                                 <span class=""><i class='bx bx-paragraph'></i></span>
-                                <p>{{ $posts->descripcion }}</p>
+                                <p>{{ $ultimoPost->descripcion }}</p>
                             </div>
 
                             <div class="flex">
                                 <span class=""></span>
                                 {{-- PARA CONSULTAS DIRECTAS DE TIPO "SELECT" --}}
                                 {{-- SETEAMOS LA FECHA CON CARBON --}}
-                                {{-- <p> {{ \Carbon\Carbon::parse($posts->fechaRegistroPost)->diffForHumans() }}</p> --}}
-                                <p>{{ $posts->created_at->diffForHumans() }}</p>
+                                {{-- <p> {{ \Carbon\Carbon::parse($ultimoPost->fechaRegistroPost)->diffForHumans() }}</p> --}}
                             </div>
 
                             <div>
@@ -166,6 +165,7 @@
                                 @endguest
                             </div>
                         </div>
+                        {{-- @endforeach --}}
                     @else
                         <h2>Registrate en el Portal para Publicar tus Productos</h2>
                     @endif
