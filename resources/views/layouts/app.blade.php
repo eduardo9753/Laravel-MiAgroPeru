@@ -134,6 +134,20 @@
 
 
     {{-- FOOTER HTML --}}
+    <footer>
+        <nav class="navegacion">
+            <div class="mi-contenedor flex-between">
+                <div class="logo">
+                    <a href="{{ route('home') }}"><img src="{{ asset('img/logos/logo.png') }}" alt=""></a>
+                </div>
+
+                <ul class="flex-between gap-3">
+                    <li class="link-menu"><a href="{{ route('login') }}" class="link">AntHony Eduardo Nuñez Canchari</a></li>
+                    <li class="link-menu"><a href="{{ route('register') }}" class="link">Ing. Sistemas</a></li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
 
 
 </body>

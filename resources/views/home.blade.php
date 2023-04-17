@@ -95,12 +95,13 @@
 
     <section class="publicacion">
         <div class="mi-contenedor">
-            <div>
-                <h3 class="titulo-publicacion">PUBLICACION RECIENTE </h3>
-            </div>
+            
             <div class="center">
                 <div class="contenido-publicacion tamanio-publicacion">
                     @if ($ultimoPost)
+                    <div>
+                        <h3 class="titulo-publicacion">Ultima Publicación </h3>
+                    </div>
                         {{-- @foreach ($ultimoPost as $ultimoPost) --}}
                         <div class="descripcion-imagen">
                             <img class="imagen-home" src="{{ asset('uploads/' . $ultimoPost->imagen) }}" alt="">
@@ -167,7 +168,10 @@
                         </div>
                         {{-- @endforeach --}}
                     @else
-                        <h2>Registrate en el Portal para Publicar tus Productos</h2>
+                        <h2 class="text-center">Registrate en el Portal para Publicar tus Productos</h2>
+                        <ul class="center gap-3">
+                            <li class="link-menu"><a href="{{ route('register') }}" class="link text-center">Registrarme</a></li>
+                        </ul>
                     @endif
                 </div>
             </div>
