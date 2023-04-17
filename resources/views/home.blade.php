@@ -108,7 +108,7 @@
                                 <div class="flex">
                                     <span class=""><i class='bx bxs-heart' style='color:#ef0d0d'></i></span>
 
-                                    <p>{{ $like }}</p>
+                                    {{--<p>{{ $likes }}</p>--}}
 
                                 </div>
 
