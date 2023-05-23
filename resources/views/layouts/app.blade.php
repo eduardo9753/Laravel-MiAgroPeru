@@ -11,6 +11,7 @@
     <!--CSS Y ESTILOS TAILWIND.CSS CARPETA : "public/css/app.css"-->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/colores.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/generales.css') }}">
     <link rel="stylesheet" href="{{ asset('css/auth/registro.css') }}">
@@ -23,7 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/responsive/dashboard.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive/post.show.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive/generales.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/responsive/menu.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/responsive/nav.css') }}">
 
 
     <!--JS  CARPETA : "public/js/app.js"-->
@@ -55,47 +56,10 @@
         @yield('franja')
         {{-- END FRANJA VERDE --}}
 
-
-
-        <div class="mi-contenedor flex-between p-1 caja-menu-responsive">
-            <div class="logo">
-                <a href="{{ route('home') }}"><img src="{{ asset('img/logos/logo.png') }}" alt=""></a>
-            </div>
-
-
-            <div class="caja-menu ">
-                <input type="checkbox" id="check">
-                <label for="check" class="checkbtn"><i class="bx bx-menu tamanio-menu"></i></label>
-            </div>
-        </div>
-
+        
         {{-- NAVEGACION CON LOGEO --}}
         @auth
-            <nav class="navegacion">
-                <div class="mi-contenedor flex-evenly">
-
-                    {{-- CREAR MENU AMBURQUESA CON JAVASCRIPT --}}
-                    <ul class="flex-between ">
-                        <li class="link-menu"><a href="{{ route('posts.publicacion') }}" class="link my-1">Publicaciones</a>
-                        </li>
-                        {{-- LE PASAMOS TODA LA VARIABLE USUARIO INICIADA QUE REQUIERE "posts.index" --}}
-                        <li class="link-menu"><a href="{{ route('posts.index', auth()->user()) }}" class="link my-1">
-                                {{ auth()->user()->username }}</a></li>
-                        <li class="link_menu my-1"><a href="{{ route('posts.create') }}"
-                                class="crear-boton crear color-blanco crear-boton-espacio"><i class='bx bx-camera bx-tada'></i></a></li>
-                        <li class="link_menu my-1"><a href="{{ route('posts.desarrollador') }}"
-                                class="crear-boton crear color-blanco crear-boton-espacio"><i class='bx bxs-face bx-tada'></i></a></li>
-                        <li class="link-menu my-1">
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <button type="submit" class="crear-boton salir color-blanco crear-boton-espacio"><i
-                                        class='bx bx-exit bx-tada'></i></button>
-                            </form>
-                        </li>
-
-                    </ul>
-                </div>
-            </nav>
+            <x-nav-auth />
         @endauth
         {{-- END NAVEGACION CON LOGEO --}}
 
@@ -103,18 +67,7 @@
 
         {{-- NAVEGACION SIN LOGEO --}}
         @guest
-            <nav class="navegacion">
-                <div class="mi-contenedor flex-between">
-                    <div class="logo">
-                        <a href="{{ route('home') }}"><img src="{{ asset('img/logos/logo.png') }}" alt=""></a>
-                    </div>
-
-                    <ul class="flex-between gap-3">
-                        <li class="link-menu"><a href="{{ route('login') }}" class="link">Ingresar</a></li>
-                        <li class="link-menu"><a href="{{ route('register') }}" class="link">Registrarme</a></li>
-                    </ul>
-                </div>
-            </nav>
+            <x-nav-guest />
         @endguest
         {{-- END NAVEGACION SIN LOGEO --}}
 
@@ -134,20 +87,23 @@
 
 
     {{-- FOOTER HTML --}}
-    <footer>
-        <nav class="navegacion">
-            <div class="mi-contenedor flex-between">
-                <div class="logo">
-                    <a href="{{ route('home') }}"><img src="{{ asset('img/logos/logo.png') }}" alt=""></a>
-                </div>
+    @guest
+        <footer>
+            <nav class="navegacion">
+                <div class="mi-contenedor flex-between">
+                    <div class="logo">
+                        <a href="{{ route('home') }}"><img src="{{ asset('img/logos/logo.png') }}" alt=""></a>
+                    </div>
 
-                <ul class="flex-between gap-3">
-                    <li class="link-menu"><a href="{{ route('login') }}" class="link">AntHony Eduardo Nuñez Canchari</a></li>
-                    <li class="link-menu"><a href="{{ route('register') }}" class="link">Ing. Sistemas</a></li>
-                </ul>
-            </div>
-        </nav>
-    </footer>
+                    <ul class="flex-between gap-3">
+                        <li class="link-menu"><a href="{{ route('login') }}" class="link">Publica tus productos
+                                gratis</a></li>
+                        <li class="link-menu"><a href="{{ route('register') }}" class="link">Registrarme</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </footer>
+    @endguest
 
 
 </body>
@@ -162,7 +118,7 @@
 {{-- CARGA DE IMAGEN CDN --}}
 <script src="{{ asset('js/cargarImagen.js') }}" defer></script>
 <script src="{{ asset('js/cargarImagenPublicacion.js') }}" defer></script>
-<script src="{{ asset('js/menu.js') }}" defer></script>
+
 {{-- SCRIPT LIVEWIRE --}}
 @livewireScripts
 

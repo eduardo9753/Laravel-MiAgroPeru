@@ -8,38 +8,10 @@
 
 
 
-{{--
-@section('franja')
-    <div class="franja flex-between">
-        <div class="redes-sociales flex-between">
-            <div class="facebook">
-                <i class='bx bxl-facebook'></i>
-            </div>
-            <div class="instagram">
-                <i class='bx bxl-instagram'></i>
-            </div>
-        </div>
-
-        <div>
-            <h1 class="titulo-franja-logo">MiAgroPeru</h1>
-        </div>
-
-        <div class="contactos">
-            <div class="whatsaap">
-                <i class='bx bxl-whatsapp bx-tada'></i> <span class="numero-whatsapp">+51 922 394 642</span>
-            </div>
-        </div>
-    </div>
-@endsection
---}}
-
-
-
-
 @section('header')
     <div id="" class="header">
         <div class="mi-contenedor header-descripcion">
-            <h1 class="">MiAgroPeru - La Plataforma de los Agricultores Peruanos</h1>
+            <h1 class="espacio-arriba">MiAgroPeru - La Plataforma de los Agricultores Peruanos</h1>
             <p class="mt-5">Una Iniciativa que promueve los productos de nuestros Agricultores Peruanos</p>
             <p class="mb-5">Registrate en Nuestro Portal y publica tus Productos para que puedan contactarte</p>
 
@@ -68,7 +40,7 @@
                     </div>
                     <div class="flex">
                         <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
-                        <p>Realiza una Publicacion de tu Producto</p>
+                        <p>Publica tus productos en nuestra web</p>
                     </div>
                     <div class="flex">
                         <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
@@ -95,13 +67,13 @@
 
     <section class="publicacion">
         <div class="mi-contenedor">
-            
+
             <div class="center">
                 <div class="contenido-publicacion tamanio-publicacion">
                     @if ($ultimoPost)
-                    <div>
-                        <h3 class="titulo-publicacion">Ultima Publicación </h3>
-                    </div>
+                        <div>
+                            <h3 class="titulo-publicacion">Ultima Publicación </h3>
+                        </div>
                         {{-- @foreach ($ultimoPost as $ultimoPost) --}}
                         <div class="descripcion-imagen">
                             <img class="imagen-home" src="{{ asset('uploads/' . $ultimoPost->imagen) }}" alt="">
@@ -109,7 +81,7 @@
                                 <div class="flex">
                                     <span class=""><i class='bx bxs-heart' style='color:#ef0d0d'></i></span>
 
-                                    {{--<p>{{ $likes }}</p>--}}
+                                    {{-- <p>{{ $likes }}</p> --}}
 
                                 </div>
 
@@ -157,9 +129,6 @@
                             <div>
                                 @guest
                                     <p class="text-center mt-5">Para darle Like - Registrate en el Portal</p>
-                                @endguest
-
-                                @guest
                                     <div class="text-center my-4">
                                         <a href="{{ route('register') }}" class="">Quiero Registrarme</a>
                                     </div>
@@ -168,9 +137,10 @@
                         </div>
                         {{-- @endforeach --}}
                     @else
-                        <h2 class="text-center">Registrate en el Portal para Publicar tus Productos</h2>
+                        <h2 class="text-center">Registrate y publica</h2>
                         <ul class="center gap-3">
-                            <li class="link-menu"><a href="{{ route('register') }}" class="link text-center">Registrarme</a></li>
+                            <li class="link-menu"><a href="{{ route('register') }}"
+                                    class="link text-center">Registrarme</a></li>
                         </ul>
                     @endif
                 </div>

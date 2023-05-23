@@ -13,7 +13,7 @@
     <section class="registro-usuario relleno">
         <div class="mi-contenedor">
             <div class="flex-evenly contenido-registro-usuario">
-                <div class="registro-usuario-imagen">
+                <div class="registro-usuario-imagen espacio-arriba">
                     <img class="" src="{{ asset('img/usuario/register-user.jpg') }}" alt="">
                 </div>
 

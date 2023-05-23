@@ -13,7 +13,7 @@
     <section class="registro-usuario ">
         <div class="mi-contenedor">
             <div class="flex-evenly contenido-registro-usuario">
-                <div class="registro-usuario-formulario">
+                <div class="registro-usuario-formulario espacio-arriba">
                     <form action="{{ route('posts.store') }}" method="POST" class="" novalidate
                         enctype="multipart/form-data">
                         {{-- TOKEN DE SEGURIDAD --}}

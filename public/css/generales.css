@@ -67,6 +67,8 @@ p{ margin-bottom: 0px !important;}
 
 .espacio-entre { gap: 3rem;}
 
+.espacio-arriba { margin-top: 4.4rem;}
+
 .relleno { padding: 50px 0px 50px 0px;}
 
 .mi-boton{
@@ -96,12 +98,13 @@ p{ margin-bottom: 0px !important;}
 
 .btn-header{
     border: none;
-    padding: 14px;
+    font-size: 2rem;
+    padding: .7rem 2.5rem;
     text-align: center;
     box-sizing: border-box !important;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 45px;
     color: var(--blanco);
     border: 1px solid var(--green);
 }
@@ -181,33 +184,7 @@ p{ margin-bottom: 0px !important;}
    font-weight: bold;
 }
 
-
-/*PARA ESCONDER EL MENU EN PANTALLA GRANDE*/
-.esconder {
-    display: none;
-}
-
-.activo {
-    display: block !important;
-}
-
-.opacity {
-    transition:  all .3s ease-in-out;
-}
-
-
-/*PARA BORRAR EL ICONO*/
-#check{ display: none;}
-.tamanio-menu {font-size: 30px;}
-
-
 /*PARA QUITAR EL MARGIN EN UL DEL MISMO BOOSTRAP*/
 ol, ul {
     padding-left: 0rem !important;
-}
-
-
-/*ESCONDER CAJA MENU MOBILE PARA PANTALLAS GRANDES*/
-.caja-menu-responsive{
-    display: none;
 }

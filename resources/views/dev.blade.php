@@ -8,9 +8,9 @@
 
 
 @section('contenido')
-    <section class="mt-5" id="">
+    <section class="" id="">
         <div class="mi-contenedor center espacio-entre relleno gris">
-            <div class="publicacion-imagen">
+            <div class="publicacion-imagen espacio-arriba">
                 <img class="imagen-home" src="{{ asset('img/dev/dev.jpg') }}" alt="">
             </div>
 

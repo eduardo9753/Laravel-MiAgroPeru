@@ -10,7 +10,7 @@
 @section('contenido')
     <section class="publicacion-usuario" id="">
         <div class="mi-contenedor center espacio-entre relleno">
-            <div class="publicacion-imagen">
+            <div class="publicacion-imagen espacio-arriba">
                 @if ($user->imagen)
                     <img src="{{ asset('perfiles/' . $user->imagen) }}" alt="">
                 @else
