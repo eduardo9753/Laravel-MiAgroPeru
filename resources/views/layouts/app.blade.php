@@ -6,6 +6,12 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
+    <meta name="keywords"
+        content="miagroperu, MIAGROPERU , miagroperu.familc.com, MIAGROPERU.FAMILC.COM , agricultura , productos , subir productos , promocionar productos , promocionar mis productos, vender mis productos , promocionamos agricultura peruana">
+    <meta name="description"
+        content="Red Social orientado hacia los agricultores peruanos para poder promocionar sus productos en la web , podrás subir tus productos para que tus compradores puedan estar en contacto contigo y asi poder venderlos">
+
+
     <title>MiAgroPeru - @yield('titulo')</title>
 
     <!--CSS Y ESTILOS TAILWIND.CSS CARPETA : "public/css/app.css"-->
