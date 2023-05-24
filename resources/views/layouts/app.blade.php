@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css/post/dashboard.css') }}">
     <link rel="stylesheet" href="{{ asset('css/post/create.css') }}">
 
-    {{-- RESPONSE CSS --}}
+    <!-- RESPONSE CSS -->
     <link rel="stylesheet" href="{{ asset('css/responsive/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive/auth.registro.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive/dashboard.css') }}">
@@ -30,63 +30,63 @@
     <!--JS  CARPETA : "public/js/app.js"-->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    {{-- ICONO DEL PROYECTO --}}
+    <!-- ICONO DEL PROYECTO -->
     <link rel="shortcut icon" href="{{ asset('img/logos/logo.png') }}">
 
     <!-- Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    {{-- GOOOGLE FONTS --}}
+    <!-- GOOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 
-    {{-- CDN BOOTSTRAP --}}
+    <!-- CDN BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-    {{-- ESTILOS LIVEWIRE --}}
+    <!-- ESTILOS LIVEWIRE -->
     @livewireStyles
 
 </head>
 
 <body>
     <header>
-        {{-- FRANJA VERDE --}}
+        <!-- FRANJA VERDE -->
         @yield('franja')
-        {{-- END FRANJA VERDE --}}
+        <!-- END FRANJA VERDE -->
 
-        
-        {{-- NAVEGACION CON LOGEO --}}
+
+        <!-- NAVEGACION CON LOGEO -->
         @auth
             <x-nav-auth />
         @endauth
-        {{-- END NAVEGACION CON LOGEO --}}
+        <!-- END NAVEGACION CON LOGEO -->
 
 
 
-        {{-- NAVEGACION SIN LOGEO --}}
+        <!-- NAVEGACION SIN LOGEO -->
         @guest
             <x-nav-guest />
         @endguest
-        {{-- END NAVEGACION SIN LOGEO --}}
+        <!-- END NAVEGACION SIN LOGEO -->
 
 
-        {{-- HEADER --}}
+        <!-- HEADER -->
         @yield('header')
-        {{-- END HEADER --}}
+        <!-- END HEADER -->
     </header>
 
 
 
-    {{-- MAIN HTML --}}
+    <!-- MAIN HTML -->
     <main>
         <!--CONTENIDO GENERAL DE TODAS LAS PAGINAS-->
         @yield('contenido')
     </main>
 
 
-    {{-- FOOTER HTML --}}
+    <!-- FOOTER HTML -->
     @guest
         <footer>
             <nav class="navegacion">
@@ -108,18 +108,18 @@
 
 </body>
 
-{{-- CDN JS BOOTSTRAP --}}
+<!-- CDN JS BOOTSTRAP -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
 </script>
-{{-- CDN JQUERY --}}
+<!-- CDN JQUERY -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-{{-- CARGA DE IMAGEN CDN --}}
+<!-- CARGA DE IMAGEN CDN -->
 <script src="{{ asset('js/cargarImagen.js') }}" defer></script>
 <script src="{{ asset('js/cargarImagenPublicacion.js') }}" defer></script>
 
-{{-- SCRIPT LIVEWIRE --}}
+<!-- SCRIPT LIVEWIRE -->
 @livewireScripts
 
 </html>
