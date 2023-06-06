@@ -54,7 +54,10 @@
 
                         <div class="flex">
                             <span class=""><i class='bx bxl-whatsapp' style='color:#23e259'></i></span>
-                            <p class="">{{ $post->user->celular }}</p>
+                            <a target="_blank"
+                                href="https://wa.me/51{{ $post->user->celular }}?text=Quisiera más información del producto - Nombre:{{ $post->titulo }} - {{ $post->descripcion }}"
+                                class="boton texto-boton-general ">{{ $post->user->celular }}</a>
+
                         </div>
 
                         <div class="flex">
