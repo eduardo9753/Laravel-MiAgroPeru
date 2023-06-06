@@ -14,7 +14,6 @@
             <h1 class="espacio-arriba">MiAgroPeru - La Plataforma de los Agricultores Peruanos</h1>
             <p class="mt-5">Una Iniciativa que promueve los productos de nuestros Agricultores Peruanos</p>
             <p class="mb-5">Registrate en Nuestro Portal y publica tus Productos para que puedan contactarte</p>
-
             @guest
                 <a href="{{ route('register') }}" class="btn-header">Quiero Registrarme</a>
             @endguest

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Like;
 use App\Models\Post;
+use App\Models\Weather;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -41,7 +42,7 @@ class HomeController extends Controller
         //$like = DB::table('likes')->where('post_id', optional($ultimoPost->id))->count();
 
        
-       
+        $weather = Weather::Api();
         return view('home', [
             'ultimoPost' => $ultimoPost
           //  'like' => $like
