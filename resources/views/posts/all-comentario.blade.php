@@ -65,6 +65,6 @@
             </div>
         @endforeach
     @else
-        <p class="my-4 p-3 text-center">Añade un nuevo comentario</p>
+        <p class="my-4 p-3 text-center">Sin comentario aún</p>
     @endif
 </div>
