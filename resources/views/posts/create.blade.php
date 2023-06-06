@@ -10,10 +10,10 @@
 
 
 @section('contenido')
-    <section class="registro-usuario ">
+    <section class="registro-usuario">
         <div class="mi-contenedor">
             <div class="flex-evenly contenido-registro-usuario">
-                <div class="registro-usuario-formulario espacio-arriba">
+                <div class="registro-usuario-formulario espacio-arriba gris p-3">
                     <form action="{{ route('posts.store') }}" method="POST" class="" novalidate
                         enctype="multipart/form-data">
                         {{-- TOKEN DE SEGURIDAD --}}

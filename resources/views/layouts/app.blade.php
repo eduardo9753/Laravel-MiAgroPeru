@@ -36,6 +36,10 @@
     <!--JS  CARPETA : "public/js/app.js"-->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <!--Notify-->
+    <script src="{{ asset('notify/notify.js') }}" defer></script>
+
+
     <!-- ICONO DEL PROYECTO -->
     <link rel="shortcut icon" href="{{ asset('img/logos/logo.png') }}">
 
@@ -122,8 +126,10 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <!-- CARGA DE IMAGEN CDN -->
+
 <script src="{{ asset('js/cargarImagen.js') }}" defer></script>
 <script src="{{ asset('js/cargarImagenPublicacion.js') }}" defer></script>
+<script src="{{ asset('js/ajaxComentario.js') }}" defer></script>
 
 <!-- SCRIPT LIVEWIRE -->
 @livewireScripts

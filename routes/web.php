@@ -53,7 +53,9 @@ Route::get('/post/desarrollador', [PostController::class, 'desarrollador'])->nam
 
 
 /*COMENTARIOS*/
-Route::post('/{user:username}/posts/{post}', [ComentarioController::class, 'store'])->name('comentarios.store');
+Route::post('/{username}/post/{id}', [ComentarioController::class, 'store'])->name('comentarios.store');
+Route::get('/comentario/fetch/comentarios', [ComentarioController::class, 'fetchComentario'])->name('comentarios.fetch');
+//Route::post('/{user:username}/posts/{post}', [ComentarioController::class, 'store'])->name('comentarios.store');
 
 
 /*LIKES A LAS FOTOS*/

@@ -23,7 +23,7 @@
                         @csrf
 
                         <div class="form-group">
-                            <label for="name" class="label-registro">Nombre</label>
+                            <label for="name" class="label-registro espacio-arriba">Nombre</label>
                             <input type="text" id="name" name="name"
                                 class="caja-registro-usuario form-control w-100" 
                                 placeholder="Nombres" autocomplete="off" value="{{ old('name') }}">

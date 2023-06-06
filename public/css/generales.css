@@ -65,7 +65,7 @@ p{ margin-bottom: 0px !important;}
     align-items: center;
 }
 
-.espacio-arriba { margin-top: 6rem;}
+.espacio-arriba { margin-top: 4rem !important;}
 .espacio-entre { gap: 3rem;}
 .relleno { padding: 50px 0px 50px 0px;}
 
@@ -106,9 +106,7 @@ p{ margin-bottom: 0px !important;}
     color: var(--blanco);
     border: 1px solid var(--green);
 }
-.btn-header:hover{
-    background-color: var(--green);
-}
+.btn-header:hover{ background-color: var(--green);}
 
 .color-blanco {background-color: rgb(255, 255, 255);}
 .color-verde {
@@ -131,6 +129,7 @@ p{ margin-bottom: 0px !important;}
 }
 
 
+
 .mensaje{
     width: 100%;
     background-color: var(--green);
@@ -150,8 +149,8 @@ p{ margin-bottom: 0px !important;}
 
 /*ESTILO IMAGEN HOME*/
 .imagen-home {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     text-align: center;
     margin: auto;
@@ -168,21 +167,16 @@ p{ margin-bottom: 0px !important;}
     font-family: 'Times New Roman', Times, serif
 }
 
-.descripcion-tamanio { width: 400px;}
-.comentarios-tamanio { width: 375px;}
+
+.comentarios-tamanio { width: 100%;}
 .comentarios-borde { border-bottom: 1px solid var(--gris); padding: 4px;}
 .comentarios-altura {max-height: 350px; overflow: scroll; margin-top: 2rem;}
 
 .tamanio-letra-logo { size: 34px;}
-
 .tamanio-icon { font-size: 34px;}
 
 
-.estilo-dev {
-   font-weight: bold;
-}
+.estilo-dev { font-weight: bold; }
 
 /*PARA QUITAR EL MARGIN EN UL DEL MISMO BOOSTRAP*/
-ol, ul {
-    padding-left: 0rem !important;
-}
+ol, ul { padding-left: 0rem !important; }
