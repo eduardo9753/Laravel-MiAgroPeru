@@ -66,7 +66,7 @@ p{ margin-bottom: 0px !important;}
 }
 
 .espacio-arriba { margin-top: 4rem !important;}
-.espacio-entre { gap: 3rem;}
+.espacio-entre { gap: 3rem; padding-top: 1rem;}
 .relleno { padding: 50px 0px 50px 0px;}
 
 .mi-boton{
