@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ asset('css/generales.css') }}">
     <link rel="stylesheet" href="{{ asset('css/auth/registro.css') }}">
     <link rel="stylesheet" href="{{ asset('css/post/dashboard.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/post/create.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/post/show.css') }}">
     <link rel="stylesheet" href="{{ asset('css/clima.css') }}">
 
 

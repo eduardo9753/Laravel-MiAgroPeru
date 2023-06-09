@@ -51,7 +51,7 @@ class User extends Authenticatable
     public function posts()
     {
         //ESTA SISTAXIS TE TRAE TODOS LOS POSTS RELACIONADOS CON LOS USUARIOS
-        return $this->hasMany(Post::class); 
+        return $this->hasMany(Post::class);
         // return $this->hasMany(Post::class , 'autor_id'); //SI NO SIGUES CON LA CONVENCIONES
     }
 
@@ -66,7 +66,7 @@ class User extends Authenticatable
     public function followers()
     {
         //UN USUARIO PUEDE TENER MUCHOS SEGUIDORES
-        return $this->belongsToMany(User::class, 'followers','user_id','follower_id');
+        return $this->belongsToMany(User::class, 'followers', 'user_id', 'follower_id');
     }
 
 
@@ -74,7 +74,7 @@ class User extends Authenticatable
     public function followings()
     {
         //UN USUARIO PUEDE SEGUIR A MUCHAS PERSONAS
-        return $this->belongsToMany(User::class, 'followers','follower_id','user_id');
+        return $this->belongsToMany(User::class, 'followers', 'follower_id', 'user_id');
     }
 
 
@@ -82,11 +82,6 @@ class User extends Authenticatable
     public function siguiendo(User $user)
     {
         //LE PASAMOS EL ID PARA QUE PUEDA VERIFICAR EN LA TABLA
-        return $this->followers->contains($user->id); 
+        return $this->followers->contains($user->id);
     }
-
-    
-    
-    
-
 }

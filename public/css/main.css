@@ -100,12 +100,16 @@
   margin: auto;
 }
 
-/*PUBLICACIONES*/
+/*************************************PUBLICACIONES********************************/
 .publicacion .img-publicacion{
     width: 250px;
     height: 250px;
     border-radius: 50%;
     text-align: center;
+}
+
+.publicacion .listar-publicacion {
+    width: 40%;
 }
 
 .publicacion .titulo-publicacion{
@@ -115,7 +119,7 @@
 }
 
 .publicacion .contenido-publicacion{
-    padding: .7rem;
+    padding: 1.4rem;
     background-color: var(--gris);
     border-radius: 10px;
     margin-bottom: 30px;
@@ -128,7 +132,7 @@
 
 
 
-/*ESTILOS PUBLICACIONES EN MI PERFIL(LO QUE YO HE PUBLICADO)*/
+/************ESTILOS PUBLICACIONES EN MI PERFIL(LO QUE YO HE PUBLICADO)***************/
 .mi-publicacion .mi-contenido-publicacion .mi-imagen-publicacion img {
     width: 200px;
     height: 200px;

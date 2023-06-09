@@ -24,23 +24,31 @@ class Post extends Model
     //UN POSTS PERTENECE A UN USUARIO 
     public function user()
     {
-       //CON ESTA FUNCION PODEMOS AMARRAR CON LA TABLÑA USERS Y TRAER DATOS SEGUN CRITERIO 
-       //EN LA VISTA PARA MOSTRAR
-       //TRAENDO LOS DATOS DEL POST "nombre,usuario y celular"
-       return $this->belongsTo(User::class)->select(['name','username','celular']);
+        //en belongsTo solo accedes a datos sin bucle
+        //llamamos los valores en la vista: $post->user->name
+        //llamamos los valores en la vista: $post->user->username
+        //llamamos los valores en la vista: $post->user->celular
+        return $this->belongsTo(User::class)->select(['name', 'username', 'celular']);
     }
 
-    
+
     //UN POST VA TENER MULTIPLES COMENTARIOS
     public function comentarios()
     {
-       //UN POST TIENE MUCHOS COMENTARIOS "se retorna esos datos"
-       return $this->hasMany(Comentario::class);  
+        //en hasmany lo tienes que recorrer en un bucle foreach() para acceder a los datos
+        //@foreach ($post->comentarios as $item)
+        //   {{$item->comentario}}
+        //@endforeach
+        return $this->hasMany(Comentario::class);
     }
 
     //UN POST VA TENER MUCHOS LIKES
     public function likes()
     {
+        //en hasmany lo tienes que recorrer en un bucle foreach() para acceder a los datos
+        //@foreach ($post->likes as $item)
+        //   {{$item->post_id}}
+        //@endforeach
         return $this->hasMany(Like::class);
     }
 
@@ -49,7 +57,6 @@ class Post extends Model
     {
         //VERIFICA EN LA TABLA DE LIKE QUE HAYA UN USUARIO QUE DIO LIKE O VALIDA POR EL ID QUE
         //QUE SE PASA POR PARAMETRO CON EL VALOR DE LA TABLA 
-        return $this->likes->contains('user_id',$user->id);
+        return $this->likes->contains('user_id', $user->id);
     }
-
 }

@@ -2,10 +2,11 @@
     <!-- Be present above all else. - Naval Ravikant -->
     @if ($posts->count())
         @foreach ($posts as $post)
-            <div class="contenido-publicacion p-5">
+            <div class="contenido-publicacion">
                 <div class="descripcion-imagen">
                     <a href="{{ route('posts.show', ['user' => $post->user, 'post' => $post]) }}" class="center">
-                        <img class="img-publicacion" src="{{ asset('uploads') . '/' . $post->imagen }}" alt="Imagen del post {{ $post->titulo }}">
+                        <img class="img-publicacion" src="{{ asset('uploads') . '/' . $post->imagen }}"
+                            alt="Imagen del post {{ $post->titulo }}">
                     </a>
                     <div class="flex-between py-3">
                         <div class="">
@@ -32,19 +33,29 @@
                             @endauth
                         </div>
 
+                        <div>
+                            <a href="{{ route('posts.show', ['user' => $post->user, 'post' => $post]) }}"
+                                class="center">
+                                <i class='bx bx-message-rounded-dots bx-tada'>{{ $post->comentarios->count() }}</i>
+                            </a>
+
+                        </div>
+
                         <p>{{ $post->created_at->diffForHumans() }}</p>
                     </div>
                 </div>
 
                 <div class="descripcion-publicacion">
                     <div class="flex">
-                        <span class=""><i class='bx bx-building-house' ></i></span>
+                        <span class=""><i class='bx bx-building-house'></i></span>
                         <p class="">{{ $post->user->name }}</p>
                     </div>
 
                     <div class="flex">
-                        <span class=""><i class='bx bxl-whatsapp' style='color:#23e259'  ></i></span>
-                        <p class="">{{ $post->user->celular }}</p>
+                        <span class=""><i class='bx bxl-whatsapp' style='color:#23e259'></i></span>
+                        <a target="_blank"
+                            href="https://wa.me/51{{ $post->user->celular }}?text=Quisiera más información del producto - Nombre:{{ $post->titulo }} - {{ $post->descripcion }}"
+                            class="boton texto-boton-general ">{{ $post->user->celular }}</a>
                     </div>
 
                     <div class="flex">

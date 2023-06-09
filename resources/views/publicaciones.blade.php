@@ -16,7 +16,7 @@
         <div class="mi-contenedor entre gap-3">
             {{-- CAJA USUARIO --}}
             <div>
-                <div class="caja-usuario-publicacion entre item-center gap-3">
+                <div class="caja-usuario-publicacion item-center gap-3">
                     <div class="">
                         @if (auth()->user()->imagen)
                             <a href=" {{ route('posts.index', auth()->user()) }}"><img class="img-caja-usuario-publicacion"
@@ -44,8 +44,12 @@
 
             {{-- RECORRIDO DE DATOS DE LAS PUBLICACIONES DE MIS SEGUIDORES --}}
             {{-- Y AGREGANDO EL COMPONENTE "listar-post" --}}
-            <div>
+            <div class="listar-publicacion">
                 <x-listar-post :posts="$posts" /> {{-- AQUI LE PASAMOS LA VARIABLE QUE VIENE DEL CONTROLADOR "posts.publicacion" --}}
+                {{-- PAGINACION --}}
+                <div>
+                    {{ $posts->links() }}
+                </div>
             </div>
 
 
@@ -57,12 +61,10 @@
                         <div class="text-center">
                             <div>
                                 @if ($user->imagen)
-                                    <a href=" {{ route('posts.index', $user) }}"><img
-                                            class="img-caja-usuario-publicacion"
+                                    <a href=" {{ route('posts.index', $user) }}"><img class="img-caja-usuario-publicacion"
                                             src="{{ asset('perfiles/' . $user->imagen) }}" alt=""></a>
                                 @else
-                                    <a href="{{ route('posts.index', $user) }}"><img
-                                            class="img-caja-usuario-publicacion"
+                                    <a href="{{ route('posts.index', $user) }}"><img class="img-caja-usuario-publicacion"
                                             src="{{ asset('img/usuario/usuario-muro.png') }}" alt=""></a>
                                 @endif
                             </div>
@@ -70,8 +72,7 @@
                             <div class="">
                                 <a href=" {{ route('posts.index', $user) }}">
                                     {{ $user->username }}</a>
-                                <p>Se unio: <span
-                                        class="incio-usuario">{{ $user->created_at->diffForHumans() }}</span>
+                                <p>Se unio: <span class="incio-usuario">{{ $user->created_at->diffForHumans() }}</span>
                             </div>
                         </div>
                     </div>

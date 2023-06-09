@@ -11,7 +11,7 @@
                             href="{{ route('posts.index', auth()->user()) }}">{{ auth()->user()->username }}</a>
                     </li>
                     <li class="item"><a href="{{ route('posts.create') }}">Subir pubicación</a></li>
-                    <li class="item"><a href="{{ route('posts.desarrollador') }}">Creador</a></li>
+                    <li class="item"><a href="{{ route('posts.desarrollador') }}">Grupo</a></li>
                     <li class="item">
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf

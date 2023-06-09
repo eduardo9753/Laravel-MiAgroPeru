@@ -14,7 +14,7 @@
         <div class="mi-contenedor">
             <div class="entre espacio-entre">
                 <div>
-                    <img class="mt-3" src="{{ asset('uploads') . '/' . $post->imagen }}"
+                    <img class="mt-3 img-publicacion" src="{{ asset('uploads') . '/' . $post->imagen }}"
                         alt="Imagen del post {{ $post->titulo }}">
 
                     <div class="my-3">
