@@ -26,8 +26,8 @@ class LoginController extends Controller
         //CON LA BASE DE DATOS E IMPRIMIMOS EL MENSAJE 
         //EN LA VISTA "login"
         //$request->remenber : RECORDAR SESSION
-        if(!auth()->attempt($request->only('email','password'), $request->remenber)){
-           return back()->with('mensaje','Tus Credenciales estan Incorrectas');
+        if (!auth()->attempt($request->only('email', 'password'), $request->remenber)) {
+            return back()->with('mensaje', 'Tus Credenciales estan Incorrectas');
         }
 
         //REDIRECCIONAMOS AL MURO Y PASANDO LA VARIABLE USUARIO

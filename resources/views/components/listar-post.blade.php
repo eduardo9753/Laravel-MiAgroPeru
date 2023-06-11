@@ -38,7 +38,6 @@
                                 class="center">
                                 <i class='bx bx-message-rounded-dots bx-tada'>{{ $post->comentarios->count() }}</i>
                             </a>
-
                         </div>
 
                         <p>{{ $post->created_at->diffForHumans() }}</p>

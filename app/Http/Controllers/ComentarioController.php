@@ -56,9 +56,7 @@ class ComentarioController extends Controller
     FROM comentarios co
     INNER JOIN users u ON u.id = co.user_id
     INNER JOIN posts p ON p.id = co.post_id
-    WHERE p.id =?',[$request->id_post]);
-
-    
+    WHERE p.id =?', [$request->id_post]);
 
     $data = view('posts.all-comentario', [
       'post' => $post

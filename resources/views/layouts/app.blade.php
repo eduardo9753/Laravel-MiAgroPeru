@@ -108,8 +108,7 @@
                     </div>
 
                     <ul class="flex-between gap-3">
-                        <li class="link-menu"><a href="{{ route('login') }}" class="link">Publica tus productos
-                                gratis</a></li>
+                        <li class="link-menu"><a href="{{ route('login') }}" class="link">Login</a></li>
                         <li class="link-menu"><a href="{{ route('register') }}" class="link">Registrarme</a></li>
                     </ul>
                 </div>

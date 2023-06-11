@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BuscardorPostController;
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\FollowerController;
 use App\Http\Controllers\HomeController;
@@ -25,6 +26,10 @@ use Illuminate\Support\Facades\Route;
 //PAGINA PRINCIPAL POR DEFECTO DONDE SE MUSTRA LOS SLAIDERS
 //PAGINA PRINCIPAL POR DEFECTO Y QUE TIENE UN SOLO CONTROLADOR NO ES NECESARIO EL CONCHETE
 Route::get('/', HomeController::class)->name('home');
+
+
+//BUSCADOR
+Route::get('/buscador/post', [BuscardorPostController::class, 'search'])->name('post.search');
 
 
 /**RUTA REGISTRO */

@@ -1,5 +1,5 @@
 $(function () {
-    //FUNCION PARA ACTUALIZAR
+    //FUNCION PARA GUARDAR COMENTARIO METODO POST
     $('#form-comentario').on('submit', function (e) {
         e.preventDefault();
 
@@ -38,7 +38,7 @@ $(function () {
         });
     });
 
-    //TRAENDO LOS COMENTARIOS
+    //TRAENDO LOS COMENTARIOS METODO GET
     fectComentario();
     function fectComentario() {
         //console.log($('#id_post').val());

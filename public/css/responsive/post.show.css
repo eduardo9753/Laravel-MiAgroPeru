@@ -15,6 +15,10 @@
     .publicacion .listar-publicacion {
         width: 100%;
     }
+
+    .grid-tres {
+        grid-template-columns: repeat(1,1fr);
+    }
     
 }
 
