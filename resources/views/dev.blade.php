@@ -8,7 +8,7 @@
 
 
 @section('contenido')
-    <section class="" id="">
+    <section class="grupo">
         <div class="mi-contenedor grid-tres espacio-entre relleno gris">
             <div class="publicacion-imagen espacio-arriba">
                 <img class="imagen-home" src="{{ asset('img/dev/dev.jpg') }}" alt="">
@@ -91,8 +91,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
 
 

@@ -6,7 +6,7 @@
                 <ul class="menu-item">
                     <li class="item"><a href="{{ route('login') }}">Ingresar</a></li>
                     <li class="item"><a href="{{ route('register') }}">Registrarse</a></li>
-                    <li class="item mt-2">
+                    <!--<li class="item mt-2">
                         <div class="mi-contenedor">
                             <form class="d-flex" action="{{ route('post.search') }}" method="GET">
                                 <input class="form-control me-2" required type="search" name="titulo" placeholder="Digite su producto"
@@ -14,7 +14,7 @@
                                 <button class="btn btn-outline-success text-white" type="submit">Buscar</button>
                             </form>
                         </div>
-                    </li>
+                    </li>-->
                     {{-- <li class="center">
                          COMPONENTE DEL CLIMA 
                         @include('helpers.weather')
