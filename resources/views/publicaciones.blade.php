@@ -46,10 +46,6 @@
             {{-- Y AGREGANDO EL COMPONENTE "listar-post" --}}
             <div class="listar-publicacion">
                 <x-listar-post :posts="$posts" /> {{-- AQUI LE PASAMOS LA VARIABLE QUE VIENE DEL CONTROLADOR "posts.publicacion" --}}
-                {{-- PAGINACION --}}
-                <div>
-                    {{ $posts->links() }}
-                </div>
             </div>
 
 

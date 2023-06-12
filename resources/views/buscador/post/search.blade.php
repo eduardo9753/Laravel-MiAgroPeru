@@ -11,20 +11,20 @@
 
 
 @section('contenido')
-    <section class="publicacion">
+    <section class="publicacion" id="busacdor">
         <div class="mi-contenedor">
 
             @if ($posts->count())
-                <div class="padding-arriba">
+                <div>
                     <h3 class="titulo-publicacion">Ultima Publicación </h3>
                 </div>
                 <div class="grid-tres">
                     @foreach ($posts as $post)
-                        <div class="contenido-publicacion">
+                        <div class="contenido-publicacion ">
                             <div class="descripcion-imagen">
-                                <a href="{{ route('posts.show', ['user' => $post->username, 'post' => $post->id]) }}" class="center">
+                                <a href="{{ route('posts.show', ['user' => $post->user, 'post' => $post]) }}" class="center">
                                     <img class="imagen-home" src="{{ asset('uploads/' . $post->imagen) }}"
-                                        alt="Titulo {{ $post->titulo }}">
+                                        alt="Imagen del post {{ $post->titulo }}">
                                 </a>
                                 <div class="flex-between py-3">
                                     <div class="flex">
@@ -41,15 +41,15 @@
                             <div class="descripcion-publicacion">
                                 <div class="flex">
                                     <span class=""><i class='bx bx-user'></i></span>
-                                    <a href=" {{ route('posts.index', $post->username) }}">
-                                        {{ $post->username }}</a>
+                                    <a href=" {{ route('posts.index', $post->user) }}">
+                                        {{ $post->user->username }}</a>
                                 </div>
 
                                 <div class="flex">
                                     <span class=""><i class='bx bxl-whatsapp' style='color:#23e259'></i></span>
                                     <a target="_blank"
-                                        href="https://wa.me/51{{ $post->celular }}?text=Quisiera más información del producto - Nombre:{{ $post->titulo }} - {{ $post->descripcion }}"
-                                        class="boton texto-boton-general ">{{ $post->celular }}</a>
+                                        href="https://wa.me/51{{ $post->user->celular }}?text=Quisiera más información del producto - Nombre:{{ $post->titulo }} - {{ $post->descripcion }}"
+                                        class="boton texto-boton-general ">{{ $post->user->celular }}</a>
                                 </div>
 
                                 <div class="flex">
@@ -86,9 +86,17 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="text-center">{{ $posts->withQueryString()->links() }}</div>
+                {{ $posts->withQueryString()->links() }}
             @else
-                <h2 class="text-center padding-arriba">Producto No encontrado</h2>
+                <ul class="padding-arriba">
+                    <div class="text-center">
+                        <h2 class="text-center">Datos no encontramos</h2>
+                        @guest
+                            <li class="link-menu"><a href="{{ route('register') }}" class="link text-center">Registrarme</a>
+                            </li>
+                        @endguest
+                    </div>
+                </ul>
             @endif
 
         </div>

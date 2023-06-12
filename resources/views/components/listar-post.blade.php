@@ -80,6 +80,10 @@
                 </div>
             </div>
         @endforeach
+        {{-- PAGINACION --}}
+        <div>
+            {{ $posts->withQueryString()->links() }}
+        </div>
     @else
         <p>Aun no hay Püblicaciones sigue a estas personas </p>
     @endif

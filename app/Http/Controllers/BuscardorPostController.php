@@ -10,12 +10,13 @@ class BuscardorPostController extends Controller
     //BUSCADOR
     public function search(Request $request)
     {
-        //CON ESTA SENTENCIA PODER ACCESDER A DATOS TIPO
+        //CON ESTA SENTENCIA PODER ACCESDER A DATOS TIPO RECOMENDABLE PARA PAGINACION DE DATOS
         //$post->user->celular
-        //$posts = Post::select("*")->where('titulo', 'LIKE', '%' . $request->titulo . '%')->simplePaginate(12);
+        $posts = Post::select("*")->where('titulo', 'LIKE', '%' . $request->titulo . '%')->simplePaginate(12);
 
 
-        //CON ESTA SENTENCIA NO ES NECESARIO PORQUE CON EL INMNER JOIN YA TIENES LOS DATOS DISPONIBLES 
+        /*CON ESTA SENTENCIA NO ES NECESARIO PORQUE CON EL INMNER JOIN YA TIENES LOS DATOS DISPONIBLES
+        //RECOMENDABLE PARA TRAER VARIOS DATOS DE DISTINTAS TABLAS 
         $posts = Post::join('users', 'users.id', '=', 'posts.user_id')
             ->select(
                 'posts.id',
@@ -28,7 +29,7 @@ class BuscardorPostController extends Controller
                 'users.name',
                 'users.id',
                 'users.username'           //LE PASAMOS EL ID DEL FORMULARIO DE BUSQUEDA
-            )->where('posts.titulo', 'LIKE', '%' . $request->titulo . '%')->orderBy('posts.titulo', 'desc')->simplePaginate(9);
+            )->where('posts.titulo', 'LIKE', '%' . $request->titulo . '%')->orderBy('posts.titulo', 'desc')->simplePaginate(9);*/
         return view('buscador.post.search', [
             'posts' => $posts,
         ]);

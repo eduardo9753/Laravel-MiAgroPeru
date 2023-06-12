@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="{{ asset('css/responsive/generales.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive/dev.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/responsive/buscador.css') }}">
 
 
     <!--JS  CARPETA : "public/js/app.js"-->

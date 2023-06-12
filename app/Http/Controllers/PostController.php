@@ -145,7 +145,7 @@ class PostController extends Controller
         //OBTENER EL ID DE LOS USUARIOS QUIENES A SEGUIMOS
         $ids  = auth()->user()->followings->pluck('id')->toArray();
         //TRAENDO LOS DATOS DE ORDEN DESC "la mas nuevas"
-        $posts = Post::whereIn('user_id', $ids)->orderBy('created_at','desc')->paginate(20);
+        $posts = Post::whereIn('user_id', $ids)->orderBy('created_at','desc')->simplePaginate(20);
         //$posts = Post::whereIn('user_id', $ids)->latest()->paginate(20);
 
         //TRAENDO 3 USUARIO DE FORMA ALEATORIA
