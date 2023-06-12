@@ -75,7 +75,10 @@
                         </div>
                         {{-- @foreach ($ultimoPost as $ultimoPost) --}}
                         <div class="descripcion-imagen">
-                            <img class="imagen-home" src="{{ asset('uploads/' . $ultimoPost->imagen) }}" alt="">
+                            <a href="{{ route('posts.show', ['user' => $ultimoPost->user, 'post' => $ultimoPost]) }}" class="center">
+                                <img class="imagen-home" src="{{ asset('uploads/' . $ultimoPost->imagen) }}"
+                                    alt="Imagen del post {{ $ultimoPost->titulo }}">
+                            </a>
                             <div class="flex-between py-3">
                                 <div class="flex">
                                     <span class=""><i class='bx bxs-heart' style='color:#ef0d0d'></i></span>
