@@ -15,7 +15,7 @@
 
 <body>
     <section class="registro-usuario relleno">
-        <img class="" src="{{ asset('img/usuario/register-user.jpg') }}" alt="">
+        <img class="" src="{{ asset('img/logos/logo.png') }}" alt="">
         <h1>Hola {{ $user->name }} un placer tenerte.</h1>
         <h2>Gracias por pertenecer a MiagroPeru.</h2>
         <p>Te saluda el equipo de Soporte de MiagroPeru</p>
