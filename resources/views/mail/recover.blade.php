@@ -4,7 +4,7 @@
 
 {{-- TITULO DEL HEAD --}}
 @section('titulo')
-    Iniciar Session
+    Recuperar Contraseña
 @endsection
 
 
@@ -18,21 +18,22 @@
                 </div>
 
                 <div class="registro-usuario-formulario">
-                    <form action="{{ route('login') }}" method="POST" class="" novalidate>
+                    <form action="{{ route('mail.update') }}" method="POST" class="" novalidate>
                         {{-- TOKEN DE SEGURIDAD --}}
                         @csrf
 
                         {{-- MENSAJE SI ESTAN MAL LAS CREDENCIALES --}}
                         @if (session('mensaje'))
-                            <p class="error-registro-usuario">{{ session('mensaje') }}</p>
+                            <div class="alert alert-success mt-2" role="alert">
+                                {{ session('mensaje') }}
+                            </div>
                         @endif
 
-
                         <div class="form-group">
-                            <label for="email" class="label-registro">Email</label>
+                            <label for="email" class="label-registro">Digite su Email</label>
                             <input type="email" id="email" name="email"
-                                class="caja-registro-usuario form-control w-100" type="text"
-                                placeholder="Tu Correo Electronico" autocomplete="off" value="{{ old('email') }}">
+                                class="caja-registro-usuario form-control w-100" placeholder="Tu Correo Electronico"
+                                autocomplete="off" value="{{ old('email') }}">
                             {{-- VALIDACION CON VALIDATE --}}
                             @error('email')
                                 <p class="error-registro-usuario">{{ $message }}</p>
@@ -40,30 +41,32 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password" class="label-registro">Password</label>
+                            <label for="password" class="label-registro">Nuevo Password</label>
                             <input type="password" name="password" placeholder="*************" id="password"
-                                class="caja-registro-usuario form-control w-100" type="text" autocomplete="off">
+                                class="caja-registro-usuario form-control w-100" autocomplete="off">
                             {{-- VALIDACION CON VALIDATE --}}
                             @error('password')
                                 <p class="error-registro-usuario">{{ $message }}</p>
                             @enderror
                         </div>
 
-                        <div class="mt-3 form-check">
-                            <input type="checkbox" name="remenber" class="form-check-input caja-registro-usuario"
-                                id="mantenerSession">
-                            <label class="form-check-label" for="mantenerSession">Mantener mi Session</label>
+                        <div class="form-group">
+                            <label for="password_confirmation" class="label-registro">Repetir Password</label>
+                            <input type="password" name="password_confirmation" placeholder="*************"
+                                id="password_confirmation" class="caja-registro-usuario form-control w-100"
+                                autocomplete="off">
+                            {{-- VALIDACION CON VALIDATE --}}
+                            @error('password_confirmation')
+                                <p class="error-registro-usuario">{{ $message }}</p>
+                            @enderror
                         </div>
 
-
-                        <div> <button type="submit" class="mi-boton boton-registro-usuario"
-                                id="">INGRESAR</button></div>
+                        <div> <button type="submit" class="mi-boton boton-registro-usuario" id="">RECUPERAR
+                                CONTRASEÑA</button></div>
                     </form>
                 </div>
             </div>
-            <div class="text-center">
-                <p>No recuerdas? <a href="{{ route('mail.index') }}">Recuperar Contraseña</a></p>
-            </div>
+
         </div>
     </section>
 @endsection

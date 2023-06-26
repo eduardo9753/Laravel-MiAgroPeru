@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="registro-usuario-formulario">
-                    <form action="{{ route('register') }}" method="POST" class="" novalidate>
+                    <form action="{{ route('mail.update') }}" method="POST" class="" novalidate>
                         {{-- TOKEN DE SEGURIDAD --}}
                         @csrf
 
@@ -89,7 +89,7 @@
                         </div>
 
                         <div> <button type="submit" class="mi-boton boton-registro-usuario"
-                                id="">REGISTRARME...</button></div>
+                                id="">REGISTRARME</button></div>
                     </form>
                 </div>
             </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
@@ -26,6 +27,14 @@ use Illuminate\Support\Facades\Route;
 //PAGINA PRINCIPAL POR DEFECTO DONDE SE MUSTRA LOS SLAIDERS
 //PAGINA PRINCIPAL POR DEFECTO Y QUE TIENE UN SOLO CONTROLADOR NO ES NECESARIO EL CONCHETE
 Route::get('/', HomeController::class)->name('home');
+
+
+//RECUPERAR EMAIL(CON GMAIL)
+Route::get('/mail', [MailController::class, 'index'])->name('mail.index');
+Route::post('/mail/send', [MailController::class, 'send'])->name('mail.send');
+//Route::get('/mail/recover/{user:password}', [MailController::class, 'recover'])->name('mail.recover');
+Route::get('/mail/recover/password', [MailController::class, 'recover'])->name('mail.recover');
+Route::post('/mail/update', [MailController::class, 'update'])->name('mail.update');
 
 
 //BUSCADOR

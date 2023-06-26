@@ -4,7 +4,7 @@
 
 {{-- TITULO DEL HEAD --}}
 @section('titulo')
-    Iniciar Session
+    Recuperar Contraseña
 @endsection
 
 
@@ -18,15 +18,24 @@
                 </div>
 
                 <div class="registro-usuario-formulario">
-                    <form action="{{ route('login') }}" method="POST" class="" novalidate>
+                    <div class="text-center alert alert-warning">Favor de ingresar el correo con el cual se registro en la plataforma</div>
+                    <form action="{{ route('mail.send') }}" method="POST" class="" novalidate>
                         {{-- TOKEN DE SEGURIDAD --}}
                         @csrf
 
                         {{-- MENSAJE SI ESTAN MAL LAS CREDENCIALES --}}
                         @if (session('mensaje'))
-                            <p class="error-registro-usuario">{{ session('mensaje') }}</p>
+                            <div class="alert alert-success mt-2" role="alert">
+                                {{ session('mensaje') }}
+                            </div>
                         @endif
 
+                        {{-- MENSAJE SI ESTAN MAL LAS CREDENCIALES --}}
+                        @if (session('sin_correo'))
+                            <div class="alert alert-danger mt-2" role="alert">
+                                {{ session('sin_correo') }}
+                            </div>
+                        @endif
 
                         <div class="form-group">
                             <label for="email" class="label-registro">Email</label>
@@ -39,31 +48,12 @@
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label for="password" class="label-registro">Password</label>
-                            <input type="password" name="password" placeholder="*************" id="password"
-                                class="caja-registro-usuario form-control w-100" type="text" autocomplete="off">
-                            {{-- VALIDACION CON VALIDATE --}}
-                            @error('password')
-                                <p class="error-registro-usuario">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div class="mt-3 form-check">
-                            <input type="checkbox" name="remenber" class="form-check-input caja-registro-usuario"
-                                id="mantenerSession">
-                            <label class="form-check-label" for="mantenerSession">Mantener mi Session</label>
-                        </div>
-
-
-                        <div> <button type="submit" class="mi-boton boton-registro-usuario"
-                                id="">INGRESAR</button></div>
+                        <div> <button type="submit" class="mi-boton boton-registro-usuario" id="">RECUPERAR
+                                CONTRASEÑA</button></div>
                     </form>
                 </div>
             </div>
-            <div class="text-center">
-                <p>No recuerdas? <a href="{{ route('mail.index') }}">Recuperar Contraseña</a></p>
-            </div>
+
         </div>
     </section>
 @endsection
