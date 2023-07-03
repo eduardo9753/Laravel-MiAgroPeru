@@ -25,10 +25,10 @@ class RegisterController extends Controller
         //VALIDACIONES DE LOS CAMPOS DEL FORMULARIO
         $this->validate($request, [
             'name' => 'required|min:5|max:15',
+            'celular' => 'required|max:9',
             'username' => 'required|unique:users|min:5|max:15', //NOMBRE DE LA TABLA
             'email' => 'required|unique:users|email|max:60',
-            'password' => 'required|confirmed|min:6',
-            'celular' => 'required|max:12'
+            'password' => 'required|confirmed|min:6'
         ]);
 
         //IMPORTANDO CLASE Y CREANDO NUEVO REGISTRO EN LA BASE DE DATOS
