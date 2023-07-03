@@ -69,12 +69,12 @@
                     </div>
 
                     <div class="flex">
-                        <span class=""><i class='bx bx-dollar'></i></span>
+                        <span class="">S/</span>
                         <p> {{ $post->precio }}</p>
                     </div>
 
-                    <div class="flex">
-                        <span class=""><i class='bx bx-paragraph'></i></span>
+                    <div class="">
+                        <span class="" style="color: rgba(0, 0, 0, 0.767)">Descripción: </span>
                         <p>{{ $post->descripcion }}</p>
                     </div>
                 </div>

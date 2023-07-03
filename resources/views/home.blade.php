@@ -75,7 +75,8 @@
                         </div>
                         {{-- @foreach ($ultimoPost as $ultimoPost) --}}
                         <div class="descripcion-imagen">
-                            <a href="{{ route('posts.show', ['user' => $ultimoPost->user, 'post' => $ultimoPost]) }}" class="center">
+                            <a href="{{ route('posts.show', ['user' => $ultimoPost->user, 'post' => $ultimoPost]) }}"
+                                class="center">
                                 <img class="imagen-home" src="{{ asset('uploads/' . $ultimoPost->imagen) }}"
                                     alt="Imagen del post {{ $ultimoPost->titulo }}">
                             </a>
@@ -114,13 +115,13 @@
                             </div>
 
                             <div class="flex">
-                                <span class=""><i class='bx bx-dollar'></i></span>
+                                <span class="">S/</span>
                                 <p>{{ $ultimoPost->precio }}</p>
                             </div>
 
-                            <div class="flex">
-                                <span class=""><i class='bx bx-paragraph'></i></span>
-                                <p>{{ $ultimoPost->descripcion }}</p>
+                            <div class="">
+                                <span class="" style="color: rgba(0, 0, 0, 0.767)">Descripción: </span>
+                                <p class="text-xl">{{ $ultimoPost->descripcion }}</p>
                             </div>
 
                             <div class="flex">
@@ -151,4 +152,23 @@
             </div>
         </div>
     </section>
+@endsection
+
+
+
+@section('footer')
+    <footer>
+        <nav class="navegacion">
+            <div class="mi-contenedor flex-between">
+                <div class="logo">
+                    <a href="{{ route('home') }}"><img src="{{ asset('img/logos/logo.png') }}" alt=""></a>
+                </div>
+
+                <ul class="flex-between gap-3">
+                    <li class="link-menu"><a href="{{ route('login') }}" class="link">Login</a></li>
+                    <li class="link-menu"><a href="{{ route('register') }}" class="link">Registrarme</a></li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
 @endsection
