@@ -9,6 +9,8 @@ ul{ margin: 0 !important;}
 
 p{ margin-bottom: 0px !important;}
 
+iframe { width: 100%;height: 315px; }
+
 /*CONTENEDOR*/
 .mi-contenedor{
     width: 90%;
@@ -66,6 +68,7 @@ p{ margin-bottom: 0px !important;}
     align-items: center;
 }
 
+.espacio-arriba-titulos { padding-top: 4.5rem !important;}
 .texto-centrado{ text-align: center;}
 .padding-arriba {padding-top: 3.7rem;}
 .espacio-arriba { margin-top: 4rem !important;}
@@ -179,6 +182,7 @@ p{ margin-bottom: 0px !important;}
 
 .tamanio-letra-logo { size: 34px;}
 .tamanio-icon { font-size: 34px;}
+
 
 
 .estilo-dev { font-weight: bold; }

@@ -16,7 +16,7 @@
 
             @if ($posts->count())
                 <div>
-                    <h3 class="titulo-publicacion">Ultima Publicación </h3>
+                    <h3 class="titulo-publicacion espacio-arriba-titulos">Ultima Publicación </h3>
                 </div>
                 <div class="grid-tres">
                     @foreach ($posts as $post)
@@ -88,9 +88,9 @@
                 </div>
                 {{ $posts->withQueryString()->links() }}
             @else
-                <ul class="padding-arriba">
+                <ul class="">
                     <div class="text-center">
-                        <h2 class="text-center">Datos no encontramos</h2>
+                        <h2 class="text-center  espacio-arriba-titulos">Datos no encontramos</h2>
                         @guest
                             <li class="link-menu"><a href="{{ route('register') }}" class="link text-center">Registrarme</a>
                             </li>

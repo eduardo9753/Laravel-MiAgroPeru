@@ -17,7 +17,7 @@
                     $anio_nacimiento = 1997;
                     $edad = $anio_actual - $anio_nacimiento;
                 @endphp
-                <div class="">
+                <div class="p-5">
                     <p>Hola soy Anthony Eduardo Nuñez Canchari creador de esta Plataforma</p>
                     <p>soy Ingeniero de Sistemas Computacionales</p>
                     <p>tengo {{ $edad }} de edad</p>
@@ -48,7 +48,7 @@
                     $anio_nacimiento = 1997;
                     $edad = $anio_actual - $anio_nacimiento;
                 @endphp
-                <div class="">
+                <div class="p-5">
                     <p>Hola soy Jordy Sauñe Lozano estudie Tripulante de Cabina en Columbia </p>
                     <p>tengo {{ $edad }} de edad</p>
 
@@ -70,10 +70,10 @@
                 <img class="imagen-home" src="{{ asset('img/dev/adan.jpeg') }}" alt="">
                 @php
                     $anio_actual = Date('Y');
-                    $anio_nacimiento = 1997;
+                    $anio_nacimiento = 1999;
                     $edad = $anio_actual - $anio_nacimiento;
                 @endphp
-                <div class="">
+                <div class="p-5">
                     <p>Hola soy Adan Kard Avalos Garcia</p>
                     <p>soy Administrador de Empresas</p>
                     <p>tengo {{ $edad }} de edad</p>
@@ -92,14 +92,5 @@
                 </div>
             </div>
         </div>
-
-
-        <!--<div class="mi-contenedor center espacio-entre relleno gris mt-2">
-                    <div class="publicacion-descripcion">
-                        <p class="">Ayudanos a Crecer juntos para llegar a mas Peruanos</p>
-                        <p class="">Donaciones Voluntarias</p>
-                        <p class="estilo-dev">Cuenta BCP: 19102207218012 - CCI: 00219110220721801251</p>
-                    </div>
-                </div>-->
     </section>
 @endsection
