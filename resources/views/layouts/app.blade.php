@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/post/dashboard.css') }}">
     <link rel="stylesheet" href="{{ asset('css/post/show.css') }}">
     <link rel="stylesheet" href="{{ asset('css/clima.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/blog/blog.css') }}">
 
 
     <!-- RESPONSE CSS -->
