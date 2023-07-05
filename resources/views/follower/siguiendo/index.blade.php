@@ -18,7 +18,7 @@
                 <div>
                     <h3 class="titulo-publicacion espacio-arriba-titulos">{{ $user->username }} sigue a</h3>
                 </div>
-                <div class="grid-seis">
+                <div class="grid-follower">
                     @foreach ($siguiendo as $user)
                         <div class="contenido-publicacion ">
                             <div class="descripcion-imagen">
@@ -42,7 +42,7 @@
                         </div>
                     @endforeach
                 </div>
-                {{ $siguiendo->withQueryString()->links() }}
+                <div class="mt-5 center">{{ $siguiendo->withQueryString()->links() }}</div>
             @else
                 <p class="espacio-arriba-titulos">No sigue a nadie por ahora.</p>
             @endif

@@ -18,8 +18,7 @@
                 <div>
                     <h3 class="titulo-publicacion espacio-arriba-titulos">Seguidores de {{ $user->username }}</h3>
                 </div>
-                <div class="grid-seis">
-
+                <div class="grid-follower">
                     <!--primer bucle para recorrer los ids de nuestro seguidores-->
                     @foreach ($seguidores as $seguidor)
                         @php

@@ -61,12 +61,6 @@ p{ margin-bottom: 0px !important;}
     gap: 3rem;
 }
 
-.grid-seis {
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    gap: 1.5rem;
-}
-
 .center{
     display: flex;
     justify-content: center;
