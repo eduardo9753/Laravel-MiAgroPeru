@@ -30,8 +30,10 @@
                         @endif
                     @endauth
                 </div>
-                <p><span> {{ $user->followers->count() }}</span> @choice('Seguidor|Seguidores',$user->followers->count())</p>
-                <p><span> {{ $user->followings->count() }}</span> Siguiendo</p>
+                <p><span> {{ $user->followers->count() }}</span> <a
+                        href="{{ route('users.seguidores', ['user' => $user]) }}">@choice('Seguidor|Seguidores', $user->followers->count())</a></p>
+                <p><span> {{ $user->followings->count() }}</span> <a
+                        href="{{ route('users.siguiendo', ['user' => $user]) }}">Siguiendo</a></p>
                 <p><span>{{ $user->posts->count() }}</span> Posts</p>
 
                 {{-- EL USUARIO TENDRA QUE LOGIARSE PARA VER EL BOTON DE SEGUIR --}}
@@ -88,16 +90,13 @@
                                 </div>
                             </div>
                         @endforeach
-
-                        {{-- PAGINACION --}}
-                        <div>
-                            {{ $posts->links() }}
-                        </div>
                     @else
                         <p>Aún no tienes Publicaciones.</p>
                     @endif
 
                 </div>
+                {{-- PAGINACION --}}
+                <div class="mt-5 center">{{ $posts->links() }}</div>
             </div>
         </div>
     </section>

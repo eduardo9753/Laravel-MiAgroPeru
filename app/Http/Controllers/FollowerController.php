@@ -21,4 +21,43 @@ class FollowerController extends Controller
         $user->followers()->detach(auth()->user()->id);
         return back();
     }
+
+    //FUNCION QUE RETORNA A LOS USUARIOS QUE YO SIGO
+    public function siguiendo(User $user)
+    {
+        //LISTA DE LOS QUE ESTOY SIGUIENDO
+        $siguiendo = User::join('followers', 'followers.user_id', '=', 'users.id')
+            ->select(
+                'users.name',
+                'users.username',
+                'users.imagen',
+                'users.created_at'
+            )->where('followers.follower_id', '=', $user->id)->orderBy('users.id', 'desc')->simplePaginate(18);
+
+        return view('follower.siguiendo.index', [
+            'siguiendo' => $siguiendo,
+            'user' => $user
+        ]);
+    }
+
+    //FUNCION QUE RETORNA A LOS USURIOS QUE ME SIGUEN
+    public function seguidor(User $user)
+    {
+        //DEL ID MANDADO EXTRAIGO EL ID DEL SEGUIDOR 
+        //LO PASO COMO VARIABLE PARA PODER RECORRER LOS USUARIOS QUE ME SIGUEN
+        $seguidores = User::join('followers', 'followers.user_id', '=', 'users.id')
+            ->select(
+                'users.name',
+                'users.username',
+                'users.imagen',
+                'users.created_at',
+                'followers.follower_id'
+            )->where('followers.user_id', '=', $user->id)->orderBy('users.id', 'desc')->simplePaginate(18);
+
+        //dd($seguidores);
+        return view('follower.seguidor.index', [
+            'seguidores' => $seguidores,
+            'user' => $user
+        ]);
+    }
 }

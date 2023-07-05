@@ -90,3 +90,6 @@ Route::post('/editar/perfil', [PerfilController::class, 'store'])->name('perfil.
 //SIGUIENDO A USUARIOS
 Route::post('/{user:username}/follow', [FollowerController::class, 'store'])->name('users.follow');
 Route::delete('/{user:username}/unfollow', [FollowerController::class, 'destroy'])->name('users.unfollow');
+Route::get('/seguidores/{user:username}', [FollowerController::class , 'seguidor'])->name('users.seguidores');
+Route::get('/siguiendo/{user:username}', [FollowerController::class , 'siguiendo'])->name('users.siguiendo');
+

@@ -11,6 +11,7 @@
                     </li>
                     <li class="item"><a href="{{ route('posts.create') }}">Subir pubicación</a></li>
                     <li class="item"><a href="{{ route('posts.desarrollador') }}">Grupo</a></li>
+                    <li class="item"><a href="{{ route('blog.index') }}">Blog-MiagroPeru</a></li>
                     <li class="item mt-2">
                         <div class="mi-contenedor">
                             <form class="d-flex" action="{{ route('post.search') }}" method="GET">
