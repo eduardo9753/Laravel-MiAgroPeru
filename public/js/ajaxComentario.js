@@ -1,4 +1,10 @@
 $(function () {
+
+    id_post = $('#id_post').val();
+    if (id_post >= 1) { setInterval(fectComentario, 1000); }
+    
+
+
     //FUNCION PARA GUARDAR COMENTARIO METODO POST
     $('#form-comentario').on('submit', function (e) {
         e.preventDefault();
@@ -31,6 +37,7 @@ $(function () {
                     } else {
                         $.notify("Tu comentario no se Agrego!!", "error");
                     }
+                    $(form)[0].reset(); //reseteamos los datos en el formulario
                     console.log(data.msg);
                     fectComentario();
                 }

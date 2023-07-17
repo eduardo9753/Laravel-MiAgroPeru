@@ -30,11 +30,13 @@
                     <div>
                         <a href=" {{ route('posts.index', auth()->user()) }}">
                             {{ auth()->user()->username }}</a>
-                        <p><span> {{ auth()->user()->followers->count() }}</span> @choice(
-                            'Seguidor|Seguidores',
-                            auth()->user()->followers->count()
-                        )</p>
-                        <p><span> {{ auth()->user()->followings->count() }}</span> Siguiendo</p>
+                        <p><span> {{ auth()->user()->followers->count() }}</span> <a
+                                href="{{ route('users.seguidores', ['user' => auth()->user()]) }}">@choice(
+                                    'Seguidor|Seguidores',
+                                    auth()->user()->followers->count()
+                                )</a></p>
+                        <p><span> {{ auth()->user()->followings->count() }}</span> <a
+                                href="{{ route('users.siguiendo', ['user' => auth()->user()]) }}">Siguiendo</a></p>
                         <p><span>{{ auth()->user()->posts->count() }}</span> Posts</p>
                         <p>Te uniste: <span class="incio-usuario">{{ auth()->user()->created_at->diffForHumans() }}</span>
                         </p>
