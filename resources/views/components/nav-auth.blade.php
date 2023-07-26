@@ -9,9 +9,9 @@
                     <li class="item"><a
                             href="{{ route('posts.index', auth()->user()) }}">{{ auth()->user()->username }}</a>
                     </li>
-                    <li class="item"><a href="{{ route('posts.create') }}">Subir pubicación</a></li>
-                    <li class="item"><a href="{{ route('posts.desarrollador') }}">Grupo</a></li>
+                    <li class="item"><a href="{{ route('posts.create') }}">Subir publicación</a></li>
                     <li class="item"><a href="{{ route('blog.index') }}">Blog-MiagroPeru</a></li>
+                    <li class="item"><a href="{{ route('posts.desarrollador') }}">Grupo</a></li>
                     <li class="item mt-2">
                         <div class="mi-contenedor">
                             <form class="d-flex" action="{{ route('post.search') }}" method="GET">
@@ -22,11 +22,10 @@
                         </div>
                     </li>
                     <li class="item mt-4">
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <button type="submit" class="crear-boton salir color-blanco w-100">Cerrar
-                                    Session</button>
-                            </form>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="crear-boton salir color-blanco w-100">Salir</button>
+                        </form>
                     </li>
                     {{-- <li class="center">
                          COMPONENTE DEL CLIMA 
