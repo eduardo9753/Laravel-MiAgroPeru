@@ -4,7 +4,7 @@ Plataforma orientada hacia los agricultores Peruanos en donde podran subrir sus 
 
 Construida en laravel 8, Tailwind CSS y Base de Datos MySql.
 
-- [Visita Nuestra Pagina - Frutimanía](https://frutimania.familc.com/).
+- [Visita Nuestra Pagina - MiAgroPeru](https://miagroperu.familc.com/).
 
 HERRAMIENTAS :
 - Base de Datos: MySQL.
