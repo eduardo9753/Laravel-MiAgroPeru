@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\usuario\post;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\Comentario;
 use App\Models\Post;
@@ -58,7 +60,7 @@ class ComentarioController extends Controller
     INNER JOIN posts p ON p.id = co.post_id
     WHERE p.id =?', [$request->id_post]);
 
-    $data = view('posts.all-comentario', [
+    $data = view('usuario.posts.all-comentario', [
       'post' => $post
     ])->render();
 

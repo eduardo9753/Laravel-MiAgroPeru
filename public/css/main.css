@@ -13,7 +13,7 @@
 
 /*ESTILOS header*/
 .header {
-    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)), url(../img/carousel/carousel_1.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/7509366/pexels-photo-7509366.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -60,7 +60,7 @@
 
 /*ESTILOS FONDO AGRICULTURA*/
 .fondo-agricultura{
-   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)),  url(../img/fondo-agricultura.jpg);
+   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)),  url(https://images.pexels.com/photos/2749165/pexels-photo-2749165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover; 

@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\usuario\post;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\Post;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -27,7 +30,7 @@ class PostController extends Controller
         $posts = Post::where('user_id', $user->id)->orderBy('created_at','desc')->paginate(4);
 
         //PASANDO LA VARIABLE A LA VISTA 
-        return view('dashboard', [
+        return view('usuario.posts.dashboard', [
             'user' => $user,
             'posts' => $posts
         ]);
@@ -40,7 +43,7 @@ class PostController extends Controller
         //CONSULTA DIRECTA A LA BASE DE DATOS
         $user = DB::table('users')->where('id', auth()->user()->id)->first();
 
-        return view('posts.create', [
+        return view('usuario.posts.create', [
             'user' => $user
         ]);
     }
@@ -111,7 +114,7 @@ class PostController extends Controller
         //$user = DB::table('users')->where('id', $user->id)->first();
 
        
-        return view('posts.show', [
+        return view('usuario.posts.show', [
             'post' => $post,
             'user' => $user
         ]);
@@ -144,15 +147,16 @@ class PostController extends Controller
     {
         //OBTENER EL ID DE LOS USUARIOS QUIENES A SEGUIMOS
         $ids  = auth()->user()->followings->pluck('id')->toArray();
-        //TRAENDO LOS DATOS DE ORDEN DESC "la mas nuevas"
-        $posts = Post::whereIn('user_id', $ids)->orderBy('created_at','desc')->simplePaginate(20);
-        //$posts = Post::whereIn('user_id', $ids)->latest()->paginate(20);
+
+        //TRAENDO LOS DATOS DE ORDEN DESC Y DE CADA MES  "la mas nuevas"
+        $inicioMes = Carbon::now()->startOfMonth();
+        $inicioFormateado = $inicioMes->format('Y-m-d H:i:s');
+        $posts = Post::whereIn('user_id', $ids)->where('created_at','>=',$inicioFormateado)->orderBy('created_at','desc')->simplePaginate(20);
 
         //TRAENDO 3 USUARIO DE FORMA ALEATORIA
         $users = User::inRandomOrder()->limit(4)->get();
 
-
-        return view('publicaciones', [
+        return view('usuario.posts.publicaciones', [
            'posts' => $posts,
            'users' => $users
         ]);
@@ -161,6 +165,6 @@ class PostController extends Controller
     //VISTA DESARROLALDOR 
     public function desarrollador()
     {
-        return view('dev');
+        return view('usuario.posts.dev');
     }
 }

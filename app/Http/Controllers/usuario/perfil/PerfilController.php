@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\usuario\perfil;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\User;
 use Illuminate\Support\Str;
@@ -22,7 +24,7 @@ class PerfilController extends Controller
     //VISTA FORMULARIO DEL PERFIL DE CADA USUARIO
     public function index()
     {
-        return view('perfil.index');
+        return view('usuario.perfil.index');
     }
 
 

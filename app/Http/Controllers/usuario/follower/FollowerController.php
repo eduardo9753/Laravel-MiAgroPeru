@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\usuario\follower;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -34,7 +36,7 @@ class FollowerController extends Controller
                 'users.created_at'
             )->where('followers.follower_id', '=', $user->id)->orderBy('users.id', 'desc')->simplePaginate(18);
 
-        return view('follower.siguiendo.index', [
+        return view('usuario.follower.siguiendo.index', [
             'siguiendo' => $siguiendo,
             'user' => $user
         ]);
@@ -55,7 +57,7 @@ class FollowerController extends Controller
             )->where('followers.user_id', '=', $user->id)->orderBy('users.id', 'desc')->simplePaginate(18);
 
         //dd($seguidores);
-        return view('follower.seguidor.index', [
+        return view('usuario.follower.seguidor.index', [
             'seguidores' => $seguidores,
             'user' => $user
         ]);

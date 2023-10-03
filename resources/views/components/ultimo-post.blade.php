@@ -13,7 +13,7 @@
                 <div class="flex-between py-3">
                     <div class="flex">
                         <span class=""><i class='bx bxs-heart' style='color:#ef0d0d'></i></span>
-                        <p>{{ $ultimoPost->likes->count() }}</p> 
+                        <p>{{ $ultimoPost->likes->count() }}</p>
                     </div>
                     {{-- PARA CONSULTAS DIRECTAS DE TIPO "SELECT" --}}
                     {{-- SETEAMOS LA FECHA CON CARBON --}}
@@ -46,10 +46,11 @@
                     <p>{{ $ultimoPost->precio }}</p>
                 </div>
 
-                <div class="">
+                <div class="flex">
                     <span class="" style="color: rgba(0, 0, 0, 0.767)">Descripción: </span>
-                    <p class="text-xl">{{ $ultimoPost->descripcion }}</p>
+                    <p>{{ $ultimoPost->descripcion }}</p>
                 </div>
+
 
                 <div class="flex">
                     <span class=""></span>

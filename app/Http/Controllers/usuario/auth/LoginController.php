@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\usuario\auth;
+
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
@@ -9,7 +11,7 @@ class LoginController extends Controller
     //VISTA LOGIN
     public function index()
     {
-        return view('auth.login');
+        return view('usuario.auth.login');
     }
 
     //AUTENTICACION DEL USUARIO

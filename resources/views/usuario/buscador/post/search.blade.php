@@ -16,7 +16,7 @@
 
             @if ($posts->count())
                 <div>
-                    <h3 class="titulo-publicacion espacio-arriba-titulos">Ultima Publicación </h3>
+                    <h3 class="titulo-publicacion espacio-arriba-titulos">Productos</h3>
                 </div>
                 <div class="grid-tres">
                     @foreach ($posts as $post)
@@ -58,16 +58,16 @@
                                 </div>
 
                                 <div class="flex">
-                                    <span class=""><i class='bx bx-dollar'></i></span>
+                                    <span class="">S/</i></span>
                                     <p>{{ $post->precio }}</p>
                                 </div>
 
                                 <div class="flex">
-                                    <span class=""><i class='bx bx-paragraph'></i></span>
+                                    <span class="" style="color: rgba(0, 0, 0, 0.767)">Descripción: </span>
                                     <p>{{ $post->descripcion }}</p>
                                 </div>
 
-                                <div class="flex">
+                                <div class="">
                                     <span class=""></span>
                                     {{-- PARA CONSULTAS DIRECTAS DE TIPO "SELECT" --}}
                                     {{-- SETEAMOS LA FECHA CON CARBON --}}

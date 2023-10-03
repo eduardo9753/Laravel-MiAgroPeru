@@ -1,17 +1,17 @@
 <?php
 
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\BuscardorPostController;
-use App\Http\Controllers\ComentarioController;
-use App\Http\Controllers\FollowerController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LikeController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\visitador\BlogController;
+use App\Http\Controllers\usuario\buscador\BuscardorPostController;
+use App\Http\Controllers\usuario\post\ComentarioController;
+use App\Http\Controllers\usuario\follower\FollowerController;
+use App\Http\Controllers\visitador\HomeController;
+use App\Http\Controllers\usuario\LikeController;
+use App\Http\Controllers\usuario\auth\LoginController;
+use App\Http\Controllers\usuario\auth\LogoutController;
 use App\Http\Controllers\MailController;
-use App\Http\Controllers\PerfilController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\usuario\perfil\PerfilController;
+use App\Http\Controllers\usuario\post\PostController;
+use App\Http\Controllers\usuario\auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*

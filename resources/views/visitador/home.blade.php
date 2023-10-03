@@ -12,8 +12,9 @@
     <div id="" class="header">
         <div class="mi-contenedor header-descripcion">
             <h1 class="espacio-arriba">MiAgroPeru - La Plataforma de los Agricultores Peruanos</h1>
-            <p class="mt-5">Una Iniciativa que promueve los productos de nuestros Agricultores Peruanos</p>
-            <p class="mb-5">Registrate en Nuestro Portal y publica tus Productos para que puedan contactarte</p>
+            <p class="mt-5 mb-3">Una Iniciativa que promueve los productos de nuestros Agricultores Peruanos
+                Regístrate en Nuestro Portal y publica tus Productos para que puedan contactarte
+            </p>
             @guest
                 <a href="{{ route('register') }}" class="btn-header">Quiero Registrarme</a>
             @endguest
@@ -31,7 +32,7 @@
                     <h2 class="titulo-nosotros text-center py-3">MiAgroPeru</h2>
                     <div class="flex">
                         <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
-                        <p>Registrate en nuestro Portal</p>
+                        <p>Regístrate en nuestro Portal</p>
                     </div>
                     <div class="flex">
                         <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
@@ -48,7 +49,8 @@
                 </div>
 
                 <div class="imagen-nosotros">
-                    <img src="{{ asset('img/nosotros.jpg') }}" class="imagen-nosotros" alt="">
+                    <img src="https://images.pexels.com/photos/4207910/pexels-photo-4207910.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        class="imagen-nosotros" alt="">
                 </div>
             </div>
         </div>

@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\visitador;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\Like;
 use App\Models\Post;
@@ -43,7 +45,7 @@ class HomeController extends Controller
 
        
         $weather = Weather::Api();
-        return view('home', [
+        return view('visitador.home', [
             'ultimoPost' => $ultimoPost
           //  'like' => $like
         ]);

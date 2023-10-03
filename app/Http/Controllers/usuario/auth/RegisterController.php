@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\usuario\auth;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\User;
 use Illuminate\Support\Str;
@@ -12,7 +14,7 @@ class RegisterController extends Controller
     //VISTA DEL FORMULARIO PARA EL REGISTRO
     public function index()
     {
-        return view('auth.register');
+        return view('usuario.auth.register');
     }
 
     //PARA RECOLECTAR LA INFORMACION MANDADA DEL FORMULARIO DE REGISTRO
