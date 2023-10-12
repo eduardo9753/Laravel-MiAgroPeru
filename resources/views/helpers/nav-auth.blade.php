@@ -57,7 +57,7 @@
                             <path d="M4 12l16 0" />
                             <path d="M4 18l16 0" />
                         </svg>
-                        <p>MIAGROPERU include</p>
+                        <p>MIAGROPERU</p>
                     </div>
                 </label>
 
