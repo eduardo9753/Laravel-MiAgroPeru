@@ -14,22 +14,6 @@
                             @auth
                                 {{-- LIVEWIRE PARA LOS LIKES :"SIEMPRE VA EL NOMBRE DEL COMPONENTE" --}}
                                 <livewire:like-post :post="$post" />
-
-                                {{-- CHEKEAMOS SI EL USUARIO AUTENTICADO LE HA DADO LIKE
-                                @if ($post->checkLike(auth()->user()))
-                                    <form action="{{ route('posts.likes.destroy', $post) }}" method="POST">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button type="submit"><i class='bx bxs-heart bx-flashing'
-                                                style='color:#f50202'></i></button>
-                                    </form>
-                                @else
-                                    <form action="{{ route('posts.likes.store', $post) }}" method="POST">
-                                        @csrf
-                                        <button type="submit"><i class='bx bx-heart bx-tada'
-                                                style='color:#f50202'></i></button>
-                                    </form>
-                                @endif --}}
                             @endauth
                         </div>
 

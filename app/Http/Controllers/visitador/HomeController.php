@@ -17,37 +17,14 @@ class HomeController extends Controller
     //METODO __invoke : SE MANDA A LLAMAR AUTOMATICAMNETE
     public function __invoke()
     {
-        /*CUANDO USAS ESTE METODO LO TIENES QUE RECORRER CON BUCLE FOREACH EN LA VISTA
-        $ultimoPost = DB::select('SELECT 
-        p.id AS "idPost",
-        p.titulo AS "titulo",
-        p.precio AS "precio",
-        p.descripcion AS "descripcion",
-        p.imagen AS "imagen",
-        p.created_at AS "fechaRegistroPost",
-        usu.id AS "idUsuario",
-        usu.name AS "name",
-        usu.username AS "username",
-        usu.imagen AS "imagenUsuario",
-        usu.celular as "celular",
-        usu.created_at "fechaCreacionUsuario"
-          
-        FROM posts p 
-        INNER JOIN users usu ON usu.id = p.user_id
-        ORDER BY p.id DESC LIMIT 1');*/
-
-        $ultimoPost = Post::select('*')->orderBy('id','desc')->first();
-
-        //CUANDO USAS ELOQUENT SOLO PASAS LA VARIABLE FECHA Y DATOS($data->camapoTabla)
-        //$posts = Post::find(DB::table('posts')->max('id'));
+        $ultimoPost = Post::select('*')->orderBy('id', 'desc')->first();
         //CONTANDO LOS LIKES EN FUNCION DEL ULTIMO POST REGISTRADO EN LA BD
         //$like = DB::table('likes')->where('post_id', optional($ultimoPost->id))->count();
 
-       
         $weather = Weather::Api();
         return view('visitador.home', [
             'ultimoPost' => $ultimoPost
-          //  'like' => $like
+            //  'like' => $like
         ]);
     }
 }

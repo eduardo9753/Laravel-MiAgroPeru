@@ -40,12 +40,11 @@ class PerfilController extends Controller
 
         //VALIDAMOS LA IMAGEN QUE VIENEN DEL FORMULARIO
         if ($request->imagen) {
-            //ELIMINANDO LA IMAGEN ANTERIOR DEL USUARIO SI TUVIERA
             $user = DB::table('users')->where('id', auth()->user()->id)->first();
-            if ($user->imagen) { //VALIDANDO SI TIENE IMAGEN EN LA BASE DE DATOS
-                $imagen_path = public_path('perfiles/' . $user->imagen); //BUSCANDO LA IMAGEN
-                if (File::exists($imagen_path)) {  //VALIDANDO SI EXISTE EN LA CARPETA
-                    unlink($imagen_path);  //ELIMINANDO LA IMAGEN DEL SERVIDOR
+            if ($user->imagen) {
+                $imagen_path = public_path('perfiles/' . $user->imagen);
+                if (File::exists($imagen_path)) {
+                    unlink($imagen_path);
                 }
             }
 

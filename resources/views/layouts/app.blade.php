@@ -77,7 +77,8 @@
 
         <!-- NAVEGACION CON LOGEO -->
         @auth
-            <x-nav-auth />
+            @include('helpers.nav-auth')
+
         @endauth
         <!-- END NAVEGACION CON LOGEO -->
 
@@ -85,7 +86,7 @@
 
         <!-- NAVEGACION SIN LOGEO -->
         @guest
-            <x-nav-guest />
+            @include('helpers.nav-guest')
         @endguest
         <!-- END NAVEGACION SIN LOGEO -->
 

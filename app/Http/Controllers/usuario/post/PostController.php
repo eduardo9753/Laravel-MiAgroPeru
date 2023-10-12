@@ -16,18 +16,17 @@ use Intervention\Image\Facades\Image; //AJUTE DE LAS FOTOS
 
 class PostController extends Controller
 {
-    //PROTEGIENDO EL MURO PARA LOS USUARIOS NO AUTENTICADOS
     public function __construct()
     {
         //SOLO LOS METODOS 'show' AND 'index' SERAS VISIBLES SIN AUTENTICACION
-        $this->middleware('auth')->except(['show','index']);
+        $this->middleware('auth')->except(['show', 'index']);
     }
 
     //VISTA DEL MURO DEL USUARIO DONDE ESTAN SUS PUBLICACIONES Y LE PASAMOS LA CLASE USUARIO
     public function index(User $user)
     {
         //TRAENDO LAS PUBLICACIONES DESDE LAS MAS NUEVAS
-        $posts = Post::where('user_id', $user->id)->orderBy('created_at','desc')->paginate(4);
+        $posts = Post::where('user_id', $user->id)->orderBy('created_at', 'desc')->paginate(4);
 
         //PASANDO LA VARIABLE A LA VISTA 
         return view('usuario.posts.dashboard', [
@@ -107,13 +106,8 @@ class PostController extends Controller
 
 
     //MOSTRAR UNA PUBLICACION QUE HEMOS SUBIDO
-    public function show(User $user , Post $post)
+    public function show(User $user, Post $post)
     {
-        //CONSULTA DIRECTA A LA BASE DE DATOS
-        //$user = DB::table('users')->where('id', auth()->user()->id)->first();
-        //$user = DB::table('users')->where('id', $user->id)->first();
-
-       
         return view('usuario.posts.show', [
             'post' => $post,
             'user' => $user
@@ -132,9 +126,9 @@ class PostController extends Controller
         $post->delete();
 
         //ELIMINAR IMAGEN
-        $imagen_path = public_path('uploads/'.$post->imagen);
-        if(File::exists($imagen_path)){
-           unlink($imagen_path);
+        $imagen_path = public_path('uploads/' . $post->imagen);
+        if (File::exists($imagen_path)) {
+            unlink($imagen_path);
         }
 
         //RETORNAMOS AL MURO
@@ -151,14 +145,14 @@ class PostController extends Controller
         //TRAENDO LOS DATOS DE ORDEN DESC Y DE CADA MES  "la mas nuevas"
         $inicioMes = Carbon::now()->startOfMonth();
         $inicioFormateado = $inicioMes->format('Y-m-d H:i:s');
-        $posts = Post::whereIn('user_id', $ids)->where('created_at','>=',$inicioFormateado)->orderBy('created_at','desc')->simplePaginate(20);
+        $posts = Post::whereIn('user_id', $ids)->where('created_at', '>=', $inicioFormateado)->orderBy('created_at', 'desc')->simplePaginate(20);
 
         //TRAENDO 3 USUARIO DE FORMA ALEATORIA
         $users = User::inRandomOrder()->limit(4)->get();
 
         return view('usuario.posts.publicaciones', [
-           'posts' => $posts,
-           'users' => $users
+            'posts' => $posts,
+            'users' => $users
         ]);
     }
 

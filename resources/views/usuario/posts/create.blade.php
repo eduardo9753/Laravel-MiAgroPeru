@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <label for="titulo" class="label-registro">Titulo</label>
                             <input type="text" id="titulo" name="titulo"
-                                class="caja-registro-usuario form-control w-100" type="text" placeholder="Titulo"
+                                class="caja-registro-usuario form-control w-100" placeholder="Titulo"
                                 autocomplete="off" value="{{ old('titulo') }}">
                             {{-- VALIDACION CON VALIDATE --}}
                             @error('titulo')
@@ -44,7 +44,7 @@
                         <div class="form-group">
                             <label for="precio" class="label-registro">Precio</label>
                             <input type="text" id="precio" name="precio"
-                                class="caja-registro-usuario form-control w-100" type="text" placeholder="Precio : 20.50"
+                                class="caja-registro-usuario form-control w-100" placeholder="Precio : 20.50"
                                 autocomplete="off" value="{{ old('precio') }}">
                             {{-- VALIDACION CON VALIDATE --}}
                             @error('precio')
@@ -63,8 +63,7 @@
                             @enderror
                         </div>
 
-                        <div> <button type="submit" class="mi-boton boton-registro-usuario" id="">SUBIR
-                                PUBLICACION...</button></div>
+                        <div> <button type="submit" class="mi-boton boton-registro-usuario" id="">PUBLICAR</button></div>
                     </form>
                 </div>
             </div>

@@ -74,10 +74,9 @@ Route::get('/post/desarrollador', [PostController::class, 'desarrollador'])->nam
 /*COMENTARIOS*/
 Route::post('/{username}/post/{id}', [ComentarioController::class, 'store'])->name('comentarios.store');
 Route::get('/comentario/fetch/comentarios', [ComentarioController::class, 'fetchComentario'])->name('comentarios.fetch');
-//Route::post('/{user:username}/posts/{post}', [ComentarioController::class, 'store'])->name('comentarios.store');
 
 
-/*LIKES A LAS FOTOS*/
+/*LIKES "en desuso"*/
 Route::post('/posts/{post}/likes', [LikeController::class, 'store'])->name('posts.likes.store');
 Route::delete('/posts/{post}/likes', [LikeController::class, 'destroy'])->name('posts.likes.destroy');
 
