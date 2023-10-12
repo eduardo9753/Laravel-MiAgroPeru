@@ -30,13 +30,21 @@
                         @endif
                     @endauth
                 </div>
-                <p><span> {{ $user->followers->count() }}</span> <a
-                        href="{{ route('users.seguidores', ['user' => $user]) }}">@choice('Seguidor|Seguidores', $user->followers->count())</a></p>
-                <p><span> {{ $user->followings->count() }}</span> <a
-                        href="{{ route('users.siguiendo', ['user' => $user]) }}">Siguiendo</a></p>
+                
+                <p>
+                    <span> {{ $user->followers->count() }}</span>
+                    <a href="{{ route('users.seguidores', ['user' => $user]) }}">
+                        @choice('Seguidor|Seguidores', $user->followers->count())
+                    </a>
+                </p>
+
+                <p>
+                    <span> {{ $user->followings->count() }}</span>
+                    <a href="{{ route('users.siguiendo', ['user' => $user]) }}">Siguiendo</a>
+                </p>
+
                 <p><span>{{ $user->posts->count() }}</span> Posts</p>
 
-                {{-- EL USUARIO TENDRA QUE LOGIARSE PARA VER EL BOTON DE SEGUIR --}}
                 @auth
                     {{-- SI EL USER ES DISTINTO AL USER DEL LA SESSION ENTONCES PUEDO SEGUIR 
                 Y DEJAR DE SEGUIR --}}

@@ -9,7 +9,7 @@
 
 @section('contenido')
     <section class="publicacion">
-        <div>
+        <div class="pt-5">
             <h3 class="titulo-publicacion">Publicaciones</h3>
         </div>
 
