@@ -11,9 +11,9 @@
 @section('header')
     <div id="" class="header">
         <div class="mi-contenedor header-descripcion">
-            <h1 class="espacio-arriba">MiAgroPeru - La Plataforma de los Agricultores Peruanos</h1>
-            <p class="mt-5 mb-3">Una Iniciativa que promueve los productos de nuestros Agricultores Peruanos
-                Regístrate en Nuestro Portal y publica tus Productos para que puedan contactarte
+            <h1 class="espacio-arriba">MiAgroPeru - La plataforma de los agricultores peruanos</h1>
+            <p class="mt-5 mb-3">Una iniciativa que impulsa los productos de nuestros agricultores peruanos.
+                Regístrate en nuestro portal y comparte tus productos para que puedan ponerse en contacto contigo.
             </p>
             @guest
                 <a href="{{ route('register') }}" class="btn-header">Quiero Registrarme</a>
@@ -32,19 +32,19 @@
                     <h2 class="titulo-nosotros text-center py-3">MiAgroPeru</h2>
                     <div class="flex">
                         <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
-                        <p>Regístrate en nuestro Portal</p>
+                        <p>Inscríbete en nuestra plataforma</p>
                     </div>
                     <div class="flex">
                         <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
-                        <p>Completa Tus datos Personales</p>
+                        <p>Ingresa tus datos personales</p>
                     </div>
                     <div class="flex">
                         <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
-                        <p>Publica tus productos en nuestra web</p>
+                        <p>Presenta tus productos en nuestro sitio web</p>
                     </div>
                     <div class="flex">
                         <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
-                        <p>Contacto directo con tus compradores</p>
+                        <p>Comunicación directa con tus potenciales compradores</p>
                     </div>
                 </div>
 

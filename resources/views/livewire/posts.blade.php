@@ -63,12 +63,25 @@
         </div>
     @endforeach
 
-    <div wire:loading wire:target="loadMore">Cargando...</div>
+
+
+    @if ($posts->count() < $this->perPage)
+        <div class="card">
+            <div class="card-body">
+                <p>Fin de las publicaciones. Sigue a más usuarios para mantenerte al día con sus productos y novedades.</p>
+            </div>
+        </div>
+    @else
+        <div wire:loading wire:target="loadMore" class="d-block">Cargando...</div>
+    @endif
+
     <script>
-        window.addEventListener('scroll', function () {
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                @this.call('loadMore');
-            }
+        document.addEventListener('livewire:load', function() {
+            window.addEventListener('scroll', function() {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    @this.call('loadMore');
+                }
+            });
         });
     </script>
 
