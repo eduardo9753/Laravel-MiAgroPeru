@@ -16,6 +16,7 @@ class LikePost extends Component
     //FUNCION QUE SE EJECURA AUTOMATICAMENTE ES COMO UN "constructor"
     public function mount($post)
     {
+        $this->post = $post;
         $this->isLiked = $post->checkLike(auth()->user());
         $this->likes =  $post->likes->count(); //DE LA RELACION CONTAMOS LOS LIKES DE ESA PUBLICACION"POST"
     }

@@ -14,6 +14,9 @@ use App\Http\Controllers\usuario\post\PostController;
 use App\Http\Controllers\usuario\auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Livewire\Posts;
+use Livewire\Livewire;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,6 +71,8 @@ Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/{user:username}/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 Route::get('/post/publicaciones', [PostController::class, 'publicacion'])->name('posts.publicacion');
+Livewire::component('posts', Posts::class);
+
 Route::get('/post/desarrollador', [PostController::class, 'desarrollador'])->name('posts.desarrollador');
 
 

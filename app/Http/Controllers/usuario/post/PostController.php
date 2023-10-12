@@ -81,25 +81,6 @@ class PostController extends Controller
             'user_id' => auth()->user()->id
         ]);
 
-        /*GUARDANDO LOS DATOS EN LA BASE DE DATOS (2 FORMA)
-        $post = new Post;
-        $post->titulo = $request->titulo;
-        $post->precio = $request->precio;
-        $post->descripcion = $request->descripcion;
-        $post->imagen = $nombreImagen;
-        $post->user_id = auth()->user()->id;
-        $post->save();*/
-
-        /*GUARDANDO LOS DATOS EN LA BASE DE DATOS (3 FORMA)
-        $request->user()->posts()->create([
-            'titulo' => $request->titulo,
-            'precio' => $request->precio,
-            'descripcion' => $request->descripcion,
-            'imagen' => $nombreImagen,
-            'user_id' => auth()->user()->id
-        ]);*/
-
-
         //REDIRECCIONAMOS AL MURO Y PASANDO LA VARIABLE USUARIO
         return redirect()->route('posts.index', auth()->user()->username);
     }
@@ -139,19 +120,9 @@ class PostController extends Controller
     //PUBLICACIONES DE MIS SEGUIDORES
     public function publicacion()
     {
-        //OBTENER EL ID DE LOS USUARIOS QUIENES A SEGUIMOS
-        $ids  = auth()->user()->followings->pluck('id')->toArray();
-
-        //TRAENDO LOS DATOS DE ORDEN DESC Y DE CADA MES  "la mas nuevas"
-        $inicioMes = Carbon::now()->startOfMonth();
-        $inicioFormateado = $inicioMes->format('Y-m-d H:i:s');
-        $posts = Post::whereIn('user_id', $ids)->where('created_at', '>=', $inicioFormateado)->orderBy('created_at', 'desc')->simplePaginate(20);
-
         //TRAENDO 3 USUARIO DE FORMA ALEATORIA
         $users = User::inRandomOrder()->limit(4)->get();
-
         return view('usuario.posts.publicaciones', [
-            'posts' => $posts,
             'users' => $users
         ]);
     }

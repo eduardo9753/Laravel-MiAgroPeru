@@ -61,7 +61,8 @@
             {{-- RECORRIDO DE DATOS DE LAS PUBLICACIONES DE MIS SEGUIDORES --}}
             {{-- Y AGREGANDO EL COMPONENTE "listar-post" --}}
             <div class="listar-publicacion">
-                <x-listar-post :posts="$posts" /> {{-- AQUI LE PASAMOS LA VARIABLE QUE VIENE DEL CONTROLADOR "posts.publicacion" --}}
+                {{-- LIVEWIRE DINAMICO POR PAGINA --}}
+                <livewire:posts />
             </div>
 
 
