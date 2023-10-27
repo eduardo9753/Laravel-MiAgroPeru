@@ -11,9 +11,17 @@
                         alt="Imagen del post {{ $ultimoPost->titulo }}">
                 </a>
                 <div class="flex-between py-3">
-                    <div class="flex">
-                        <span class=""><i class='bx bxs-heart' style='color:#ef0d0d'></i></span>
-                        <p>{{ $ultimoPost->likes->count() }}</p>
+                    <div class="d-flex align-items-center gap-1">
+                        @auth
+                            {{-- LIVEWIRE PARA LOS LIKES :"SIEMPRE VA EL NOMBRE DEL COMPONENTE" --}}
+                            <livewire:like-post :post="$ultimoPost" />
+                        @endauth
+
+                        @guest
+                            <button class="btn btn-outline-danger btn-sm"><i class='bx bxs-heart'
+                                    style='color:#ef0d0d'></i></button>
+                            <p>{{ $ultimoPost->likes->count() }} Likes</p>
+                        @endguest
                     </div>
                     {{-- PARA CONSULTAS DIRECTAS DE TIPO "SELECT" --}}
                     {{-- SETEAMOS LA FECHA CON CARBON --}}
@@ -23,36 +31,36 @@
             </div>
 
             <div class="descripcion-publicacion">
-                <div class="flex">
+                <div class="d-flex">
                     <span class=""><i class='bx bx-user'></i></span>
                     <a href=" {{ route('posts.index', $ultimoPost->user) }}">
                         {{ $ultimoPost->user->username }}</a>
                 </div>
 
-                <div class="flex">
+                <div class="d-flex">
                     <span class=""><i class='bx bxl-whatsapp' style='color:#23e259'></i></span>
                     <a target="_blank"
                         href="https://wa.me/51{{ $ultimoPost->user->celular }}?text=Quisiera más información del producto - Nombre:{{ $ultimoPost->titulo }} - {{ $ultimoPost->descripcion }}"
                         class="boton texto-boton-general ">{{ $ultimoPost->user->celular }}</a>
                 </div>
 
-                <div class="flex">
+                <div class="d-flex">
                     <span class=""><i class='bx bxl-product-hunt' undefined></i></span>
                     <p>{{ $ultimoPost->titulo }}</p>
                 </div>
 
-                <div class="flex">
+                <div class="d-flex">
                     <span class="">S/</span>
                     <p>{{ $ultimoPost->precio }}</p>
                 </div>
 
-                <div class="flex">
+                <div class="d-flex">
                     <span class="" style="color: rgba(0, 0, 0, 0.767)">Descripción: </span>
                     <p>{{ $ultimoPost->descripcion }}</p>
                 </div>
 
 
-                <div class="flex">
+                <div class="d-flex">
                     <span class=""></span>
                     {{-- PARA CONSULTAS DIRECTAS DE TIPO "SELECT" --}}
                     {{-- SETEAMOS LA FECHA CON CARBON --}}

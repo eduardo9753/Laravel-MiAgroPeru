@@ -30,19 +30,19 @@
             <div class="flex-evenly">
                 <div class="descripcion-nosotros">
                     <h2 class="titulo-nosotros text-center py-3">MiAgroPeru</h2>
-                    <div class="flex">
+                    <div class="d-flex">
                         <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
                         <p>Inscríbete en nuestra plataforma</p>
                     </div>
-                    <div class="flex">
+                    <div class="d-flex">
                         <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
                         <p>Ingresa tus datos personales</p>
                     </div>
-                    <div class="flex">
+                    <div class="d-flex">
                         <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
                         <p>Presenta tus productos en nuestro sitio web</p>
                     </div>
-                    <div class="flex">
+                    <div class="d-flex">
                         <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
                         <p>Comunicación directa con tus potenciales compradores</p>
                     </div>
@@ -57,6 +57,70 @@
     </section>
 
 
+    <section>
+        <div class="" id="contenido-bloques">
+            <div class="mi-contenedor">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <div class="mi-card">
+                            <div class="mi-card-content">
+                                <h2 class="contenido-bloques-titulo">Registrate!</h2>
+                                <div class="text-center">
+                                    <img class="imagen" src="https://cdn-icons-png.flaticon.com/512/4116/4116368.png"
+                                        alt="">
+                                </div>
+                                <p class="contenido-bloques-parrafo">Regístrate proporcionando tus datos personales en
+                                    nuestra plataforma para disfrutar de la red social de MiagroPerú y acceder a una
+                                    variedad de servicios.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="mi-card">
+                            <div class="mi-card-content">
+                                <h2 class="contenido-bloques-titulo">Publica!</h2>
+                                <div class="text-center">
+                                    <img class="imagen" src="https://cdn-icons-png.flaticon.com/512/8644/8644426.png"
+                                        alt="">
+                                </div>
+                                <p class="contenido-bloques-parrafo">Comparte tus productos para alcanzar a un público más
+                                    amplio y promocionarlos en nuestra plataforma.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="mi-card">
+                            <div class="mi-card-content">
+                                <h2 class="contenido-bloques-titulo">Enlaza!</h2>
+                                <div class="text-center">
+                                    <img class="imagen" src="https://cdn-icons-png.flaticon.com/512/3201/3201615.png"
+                                        alt="">
+                                </div>
+                                <p class="contenido-bloques-parrafo">Sigue a nuevos usuarios para mantenerte actualizado con
+                                    productos novedosos de diversos sectores y rangos de precios.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="mi-card">
+                            <div class="mi-card-content">
+                                <h2 class="contenido-bloques-titulo">Busca Productos!</h2>
+                                <div class="text-center">
+                                    <img class="imagen" src="https://cdn-icons-png.flaticon.com/512/3649/3649291.png"
+                                        alt="">
+                                </div>
+                                <p class="contenido-bloques-parrafo">Explora productos de tu interés y obtén acceso a la
+                                    información de contacto de la persona que los publicó en la plataforma.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <section class="fondo-agricultura" id="fondo-agricultura">
         <div class="mi-contenedor">
             <div class="">
@@ -66,10 +130,21 @@
         </div>
     </section>
 
-    <section class="publicacion">
+
+    <section class="publicacion mt-5">
         <div class="mi-contenedor">
             <!--COMPONENTE ULTIMA PUBLICACION-->
             <x-ultimo-post :ultimoPost="$ultimoPost" />
+        </div>
+    </section>
+
+
+
+    <section class="" id="buscador">
+        <div class="mi-contenedor">
+            <h3>Buscar Productos</h3>
+            {{-- COMPONENTE LIVEWIRE BUSCADOR --}}
+            @livewire('search')
         </div>
     </section>
 @endsection

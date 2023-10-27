@@ -15,7 +15,7 @@
     <title>MiAgroPeru - @yield('titulo')</title>
 
     <!--CSS Y ESTILOS TAILWIND.CSS CARPETA : "public/css/app.css"-->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
     <link rel="stylesheet" href="{{ asset('css/colores.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">

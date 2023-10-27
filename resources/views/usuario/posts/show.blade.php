@@ -30,12 +30,12 @@
                     </div>
 
                     <div class="">
-                        <div class="flex">
+                        <div class="d-flex">
                             <span class=""><i class='bx bx-building-house'></i></span>
                             <p class="">{{ $post->user->name }}</p>
                         </div>
 
-                        <div class="flex">
+                        <div class="d-flex">
                             <span class=""><i class='bx bxl-whatsapp' style='color:#23e259'></i></span>
                             <a target="_blank"
                                 href="https://wa.me/51{{ $post->user->celular }}?text=Quisiera más información del producto - Nombre:{{ $post->titulo }} - {{ $post->descripcion }}"
@@ -43,18 +43,18 @@
 
                         </div>
 
-                        <div class="flex">
+                        <div class="d-flex">
                             <span class=""><i class='bx bx-user'></i></span>
                             <a href=" {{ route('posts.index', $post->user->username) }}">
                                 {{ $post->user->username }}</a>
                         </div>
 
-                        <div class="flex">
+                        <div class="d-flex">
                             <span class=""><i class='bx bxl-product-hunt' undefined></i></span>
                             <p class="">{{ $post->titulo }}</p>
                         </div>
 
-                        <div class="flex">
+                        <div class="d-flex">
                             <span class="">S/</span>
                             <p>{{ $post->precio }}</p>
                         </div>

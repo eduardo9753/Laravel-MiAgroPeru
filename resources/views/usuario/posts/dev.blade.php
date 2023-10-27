@@ -11,14 +11,16 @@
     <section class="grupo">
         <div class="mi-contenedor grid-tres espacio-entre relleno gris">
             <div class="publicacion-imagen espacio-arriba">
-                <img class="imagen-home" src="{{ asset('img/dev/dev.jpg') }}" alt="">
+                <div class="text-center">
+                    <img class="imagen-home" src="{{ asset('img/dev/dev.jpg') }}" alt="">
+                </div>
                 @php
                     $anio_actual = Date('Y');
                     $anio_nacimiento = 1997;
                     $edad = $anio_actual - $anio_nacimiento;
                 @endphp
                 <div class="p-5">
-                    <p>Hola soy Anthony Eduardo Nuñez Canchari creador de esta Plataforma</p>
+                    <p>Hola soy Anthony Eduardo Nuñez Canchari</p>
                     <p>soy Ingeniero de Sistemas Computacionales</p>
                     <p>tengo {{ $edad }} de edad</p>
 
@@ -42,7 +44,10 @@
 
 
             <div class="publicacion-imagen espacio-arriba">
-                <img class="imagen-home" src="{{ asset('img/dev/jordy.jpeg') }}" alt="">
+                <div class="text-center">
+                    <img class="imagen-home" src="{{ asset('img/dev/jordy.jpeg') }}" alt="">
+                </div>
+               
                 @php
                     $anio_actual = Date('Y');
                     $anio_nacimiento = 1997;
@@ -67,7 +72,10 @@
             </div>
 
             <div class="publicacion-imagen espacio-arriba">
-                <img class="imagen-home" src="{{ asset('img/dev/adan.jpeg') }}" alt="">
+                <div class="text-center">
+                    <img class="imagen-home" src="{{ asset('img/dev/adan.jpeg') }}" alt="">
+                </div>
+              
                 @php
                     $anio_actual = Date('Y');
                     $anio_nacimiento = 1999;
