@@ -54,7 +54,7 @@
                                 <div class="text-center my-3"> <img class="imagen-home" src="" id="imgPreview" alt="Nueva imagen" class="img-fluid"></div>    
                         </div>
 
-                        <div> <button type="submit" class="mi-boton boton-registro-usuario"
+                        <div> <button type="submit" class="btn btn-success w-100"
                                 id="">Actualizar Mis Datos</button></div>
                     </div>
                 </div>
