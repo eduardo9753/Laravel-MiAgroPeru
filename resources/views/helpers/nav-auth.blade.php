@@ -24,7 +24,7 @@
                     <li class="item mt-4">
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
-                            <button type="submit" class="crear-boton salir color-blanco w-100">Salir</button>
+                            <button type="submit" class="btn btn-danger w-100">Salir</button>
                         </form>
                     </li>
                     {{-- <li class="center">
@@ -57,7 +57,7 @@
                             <path d="M4 12l16 0" />
                             <path d="M4 18l16 0" />
                         </svg>
-                        <p>MIAGROPERU</p>
+                        <p class="esconder-responsive">MIAGROPERU</p>
                     </div>
                 </label>
 

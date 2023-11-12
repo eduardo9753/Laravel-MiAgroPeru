@@ -8,9 +8,15 @@
 
 
 @section('contenido')
-    <section class="publicacion-usuario" id="">
-        <div class="mi-contenedor center espacio-entre relleno">
-            <div class="publicacion-imagen espacio-arriba">
+    <section class="publicacion-usuario" id="publicacion-perfil">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="mi-contenedor center espacio-entre">
+            <div class="publicacion-imagen">
                 @if ($user->imagen)
                     <img src="{{ asset('perfiles/' . $user->imagen) }}" alt="">
                 @else
@@ -22,7 +28,7 @@
                 {{-- IMPRIMIMOS LOS DATOS DEL USUARIO
                 AUTENTICADO O DEL CUAL ESTAMOS VISITANDO --}}
                 <div class="mi-flex gap-2">
-                    <p> {{ $user->username }}</p>
+                    <p class="text-white"> {{ $user->username }}</p>
                     {{-- SI PERFIL AUTENTICADO ES IGUAL AL AUTENTICADO ENTONCES EDITAMOS --}}
                     @auth
                         @if ($user->id === auth()->user()->id)
@@ -31,19 +37,19 @@
                     @endauth
                 </div>
 
-                <p>
+                <p class="text-white">
                     <span> {{ $user->followers->count() }}</span>
-                    <a href="{{ route('users.seguidores', ['user' => $user]) }}">
+                    <a class="text-white"  href="{{ route('users.seguidores', ['user' => $user]) }}">
                         @choice('Seguidor|Seguidores', $user->followers->count())
                     </a>
                 </p>
 
-                <p>
+                <p class="text-white" >
                     <span> {{ $user->followings->count() }}</span>
-                    <a href="{{ route('users.siguiendo', ['user' => $user]) }}">Siguiendo</a>
+                    <a class="text-white" href="{{ route('users.siguiendo', ['user' => $user]) }}">Siguiendo</a>
                 </p>
 
-                <p><span>{{ $user->posts->count() }}</span> Posts</p>
+                <p class="text-white"><span>{{ $user->posts->count() }}</span> Posts</p>
 
                 @auth
                     {{-- SI EL USER ES DISTINTO AL USER DEL LA SESSION ENTONCES PUEDO SEGUIR 
@@ -55,7 +61,7 @@
                             <form action="{{ route('users.follow', $user) }}" method="POST">
                                 {{-- TOKEN DE SEGURIDAD --}}
                                 @csrf
-                                <input type="submit" class="crear-boton azul text-white my-2" value="Seguir">
+                                <input type="submit" class="btn btn-primary mt-2" value="Seguir">
                             </form>
                         @else
                             {{-- EL USUARIO TENDRA QUE LOGIARSE PARA VER EL BOTON DE SEGUIR --}}
@@ -63,7 +69,7 @@
                                 {{-- TOKEN DE SEGURIDAD --}}
                                 @csrf
                                 @method('DELETE')
-                                <input type="submit" class="crear-boton rojo text-white my-2" value="Dejar de Seguir">
+                                <input type="submit" class="btn btn-danger mt-2" value="Dejar de Seguir">
                             </form>
                         @endif
                     @endif
@@ -74,10 +80,10 @@
 
 
 
-    <section class="mi-publicacion">
+    <section class="mi-publicacion mt-5">
         <div class="mi-contenedor">
             <div class="d-flex justify-content-between">
-                <h3 class="my-titulo-publicacion">Mis Productos</h3>
+                <h3 class="my-titulo-publicacion">Publicaciones</h3>
                 {{-- PAGINACION --}}
                 <div class="">{{ $posts->links() }}</div>
             </div>
@@ -103,7 +109,6 @@
                     @else
                         <p>Aún no tienes Publicaciones.</p>
                     @endif
-
                 </div>
 
             </div>

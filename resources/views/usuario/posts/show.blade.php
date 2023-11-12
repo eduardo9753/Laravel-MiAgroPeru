@@ -100,7 +100,7 @@
                                 <span class="text-danger error-text comentario_error"></span>
                             </div>
 
-                            <div> <button type="submit" class="crear-boton color-verde w-100"
+                            <div> <button type="submit" class="btn btn-success w-100 mt-2"
                                     id="">Comentar...</button>
                             </div>
                         </form>

@@ -9,15 +9,13 @@
 
 @section('contenido')
     <section class="publicacion">
-        <div class="pt-5">
-            <h3 class="titulo-publicacion">Publicaciones</h3>
-        </div>
+        <div class="pt-5">.</div>
 
         <div class="mi-contenedor entre gap-3">
             {{-- CAJA USUARIO --}}
             <div>
                 <div class="caja-usuario-publicacion item-center gap-3">
-                    <div class="">
+                    <div id="publicacion-perfil" class=" text-center">
                         @if (auth()->user()->imagen)
                             <a href=" {{ route('posts.index', auth()->user()) }}">
                                 <img class="img-caja-usuario-publicacion"
@@ -33,10 +31,12 @@
 
                     <div>
                         <a href=" {{ route('posts.index', auth()->user()) }}">
-                            {{ auth()->user()->username }}</a>
+                            <p class="text-black text-center"> {{ auth()->user()->username }}</p>
+                        </a>
+
                         <p>
-                            <span> {{ auth()->user()->followers->count() }}</span>
                             <a href="{{ route('users.seguidores', ['user' => auth()->user()]) }}">
+                                <span> {{ auth()->user()->followers->count() }}</span>
                                 @choice(
                                     'Seguidor|Seguidores',
                                     auth()->user()->followers->count()
@@ -45,11 +45,12 @@
                         </p>
 
                         <p>
-                            <span> {{ auth()->user()->followings->count() }}</span>
-                            <a href="{{ route('users.siguiendo', ['user' => auth()->user()]) }}">Siguiendo</a>
+                            <a href="{{ route('users.siguiendo', ['user' => auth()->user()]) }}"><span>
+                                    {{ auth()->user()->followings->count() }}</span> Siguiendo</a>
                         </p>
 
-                        <p><span>{{ auth()->user()->posts->count() }}</span> Posts</p>
+                        <p><a href="{{ route('posts.index', auth()->user()) }}"><span>{{ auth()->user()->posts->count() }}</span>
+                                Posts</a></p>
 
                         <p>Te uniste:
                             <span class="incio-usuario">{{ auth()->user()->created_at->diffForHumans() }}</span>

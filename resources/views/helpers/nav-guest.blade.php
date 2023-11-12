@@ -46,7 +46,7 @@
                             <path d="M4 12l16 0" />
                             <path d="M4 18l16 0" />
                         </svg>
-                        <p>MIAGROPERU</p>
+                        <p class="esconder-responsive">MIAGROPERU</p>
                     </div>
                 </label>
 

@@ -63,7 +63,7 @@
                             @enderror
                         </div>
 
-                        <div> <button type="submit" class="mi-boton boton-registro-usuario" id="">PUBLICAR</button></div>
+                        <div> <button type="submit" class="btn btn-success w-100 mt-2" id="">PUBLICAR</button></div>
                     </form>
                 </div>
             </div>
