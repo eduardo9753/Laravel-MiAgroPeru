@@ -120,6 +120,31 @@
     </section>
 
 
+    <section id="nosotros" class="nosotros">
+        <div class="mi-contenedor">
+            <div class="row">
+                <div class="col-md-9 mb-3">
+                    <div class="mi-card">
+                        <div class="mi-card-content">
+                            <div class="text-center">
+                                <img style="width: 100%" src="https://i.postimg.cc/66m64V82/union.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <p class="card-text">Comparte tus productos para alcanzar a un público más
+                                amplio y promocionarlos en nuestra plataforma.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <section class="fondo-agricultura" id="fondo-agricultura">
         <div class="mi-contenedor">
@@ -131,13 +156,31 @@
     </section>
 
 
-    <section class="publicacion mt-5">
+
+    <section id="nosotros" class="nosotros">
         <div class="mi-contenedor">
-            <!--COMPONENTE ULTIMA PUBLICACION-->
-            <x-ultimo-post :ultimoPost="$ultimoPost" />
+            <div class="row">
+                <div class="col-md-9 mb-3">
+                    <div class="mi-card">
+                        <div class="mi-card-content">
+                            <div class="text-center">
+                                <img style="width: 100%" src="https://i.postimg.cc/j2b5gP7Q/union-dos.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <p class="card-text">Únete a nuestra comunidad en línea, donde puedes promocionar tus productos
+                                y seguir a otros emprendedores para mantenerte al tanto de las últimas novedades en
+                                productos y precios.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-
 
 
     <section class="" id="buscador">
@@ -145,6 +188,14 @@
             <h3>Buscar Productos</h3>
             {{-- COMPONENTE LIVEWIRE BUSCADOR --}}
             @livewire('search')
+        </div>
+    </section>
+
+    
+    <section class="publicacion mt-5">
+        <div class="mi-contenedor">
+            <!--COMPONENTE ULTIMA PUBLICACION-->
+            <x-ultimo-post :ultimoPost="$ultimoPost" />
         </div>
     </section>
 @endsection
