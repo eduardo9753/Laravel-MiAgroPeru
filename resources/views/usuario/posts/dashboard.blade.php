@@ -32,7 +32,7 @@
                     {{-- SI PERFIL AUTENTICADO ES IGUAL AL AUTENTICADO ENTONCES EDITAMOS --}}
                     @auth
                         @if ($user->id === auth()->user()->id)
-                            <a class="btn btn-outline-warning btn-sm text-white" href="{{ route('perfil.index') }}" class=""><i class='bx bx-edit-alt bx-tada'></i></a>
+                            <a class="btn btn-warning btn-sm text-white" href="{{ route('perfil.index') }}" class=""><i class='bx bx-edit-alt bx-tada'></i></a>
                         @endif
                     @endauth
                 </div>
