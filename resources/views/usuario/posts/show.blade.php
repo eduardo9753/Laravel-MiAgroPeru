@@ -14,8 +14,10 @@
         <div class="mi-contenedor">
             <div class="entre espacio-entre">
                 <div>
-                    <img class="mt-3 img-publicacion" src="{{ asset('uploads') . '/' . $post->imagen }}"
-                        alt="Imagen del post {{ $post->titulo }}">
+                    <div class="text-center">
+                        <img class="mt-3 img-publicacion" src="{{ asset('uploads') . '/' . $post->imagen }}"
+                            alt="Imagen del post {{ $post->titulo }}">
+                    </div>
 
                     <div class="my-3">
                         <div class="flex-around">
@@ -100,8 +102,7 @@
                                 <span class="text-danger error-text comentario_error"></span>
                             </div>
 
-                            <div> <button type="submit" class="btn btn-success w-100 mt-2"
-                                    id="">Comentar...</button>
+                            <div> <button type="submit" class="btn btn-success w-100 mt-2" id="">Comentar...</button>
                             </div>
                         </form>
                     @endauth
