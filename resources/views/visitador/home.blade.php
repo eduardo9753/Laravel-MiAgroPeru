@@ -16,7 +16,7 @@
                 Regístrate en nuestro portal y comparte tus productos para que puedan ponerse en contacto contigo.
             </p>
             @guest
-                <a href="{{ route('register') }}" class="btn-header">Quiero Registrarme</a>
+                <a href="{{ route('register') }}" class="btn btn-success btn-lg">Quiero Registrarme</a>
             @endguest
         </div>
     </div>
@@ -161,8 +161,8 @@
                     </div>
 
                     <ul class="flex-between gap-3">
-                        <li class="link-menu"><a href="{{ route('login') }}" class="link">Login</a></li>
-                        <li class="link-menu"><a href="{{ route('register') }}" class="link">Registrarme</a></li>
+                        <li class="link-menu"><a href="{{ route('login') }}" class="">Login</a></li>
+                        <li class="link-menu"><a href="{{ route('register') }}" class="">Registrarme</a></li>
                     </ul>
                 </div>
             </nav>

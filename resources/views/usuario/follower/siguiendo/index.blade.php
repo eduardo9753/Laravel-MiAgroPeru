@@ -22,12 +22,13 @@
                     @foreach ($siguiendo as $user)
                         <div class="contenido-publicacion ">
                             <div class="descripcion-imagen">
-                                <div>
+                                <div class="text-center mb-3">
                                     @if ($user->imagen)
-                                        <a href=" {{ route('posts.index', $user) }}"><img class="img-caja-usuario-publicacion"
+                                        <a href=" {{ route('posts.index', $user) }}"><img style="width: 45px;height: 45px;"
+                                                class="img-caja-usuario-publicacion"
                                                 src="{{ asset('perfiles/' . $user->imagen) }}" alt=""></a>
                                     @else
-                                        <a href="{{ route('posts.index', $user) }}"><img
+                                        <a href="{{ route('posts.index', $user) }}"><img style="width: 45px;height: 45px;"
                                                 class="img-caja-usuario-publicacion"
                                                 src="{{ asset('img/usuario/usuario-muro.png') }}" alt=""></a>
                                     @endif

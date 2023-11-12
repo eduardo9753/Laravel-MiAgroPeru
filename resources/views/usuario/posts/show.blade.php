@@ -19,11 +19,17 @@
 
                     <div class="my-3">
                         <div class="flex-around">
-                            <div class="">
+                            <div class="d-flex align-items-center gap-1">
                                 @auth
                                     {{-- LIVEWIRE PARA LOS LIKES :"SIEMPRE VA EL NOMBRE DEL COMPONENTE" --}}
                                     <livewire:like-post :post="$post" />
                                 @endauth
+
+                                @guest
+                                    <button class="btn btn-outline-danger btn-sm"><i class='bx bxs-heart'
+                                            style='color:#ef0d0d'></i></button>
+                                    <p>{{ $post->likes->count() }} Likes</p>
+                                @endguest
                             </div>
                             <p class="tiempo-comentario">{{ $post->created_at->diffForHumans() }}</p>
                         </div>

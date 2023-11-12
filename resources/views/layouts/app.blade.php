@@ -18,7 +18,7 @@
     {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
     <link rel="stylesheet" href="{{ asset('css/colores.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/visitador/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/generales.css') }}">
     <link rel="stylesheet" href="{{ asset('css/auth/registro.css') }}">
     <link rel="stylesheet" href="{{ asset('css/post/dashboard.css') }}">

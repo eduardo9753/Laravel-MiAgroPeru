@@ -75,7 +75,7 @@
   }
 
   #contenido-bloques .mi-card:hover {
-    transform: scale(1.1);
+    transform: scale(1.03);
   }
 
 
@@ -174,15 +174,14 @@
 
 /************ESTILOS PUBLICACIONES EN MI PERFIL(LO QUE YO HE PUBLICADO)***************/
 .mi-publicacion .mi-contenido-publicacion .mi-imagen-publicacion img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
 }
 
 .mi-publicacion .my-titulo-publicacion {
-    text-align: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    margin-bottom: 15px;
+    border-left: 10px solid green;
 }
 
 .mi-publicacion .mi-contenido-publicacion .mi-descripcion-publicacion .titulo{

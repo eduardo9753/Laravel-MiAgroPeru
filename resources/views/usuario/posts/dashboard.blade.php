@@ -30,7 +30,7 @@
                         @endif
                     @endauth
                 </div>
-                
+
                 <p>
                     <span> {{ $user->followers->count() }}</span>
                     <a href="{{ route('users.seguidores', ['user' => $user]) }}">
@@ -76,8 +76,10 @@
 
     <section class="mi-publicacion">
         <div class="mi-contenedor">
-            <div>
+            <div class="d-flex justify-content-between">
                 <h3 class="my-titulo-publicacion">Mis Productos</h3>
+                {{-- PAGINACION --}}
+                <div class="">{{ $posts->links() }}</div>
             </div>
 
             <div class="mi-contenido-publicacion">
@@ -103,8 +105,7 @@
                     @endif
 
                 </div>
-                {{-- PAGINACION --}}
-                <div class="mt-5 center">{{ $posts->links() }}</div>
+
             </div>
         </div>
     </section>

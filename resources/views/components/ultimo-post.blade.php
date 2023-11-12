@@ -69,18 +69,16 @@
 
                 <div>
                     @guest
-                        <p class="text-center mt-5">Para darle Like - Registrate en el Portal</p>
                         <div class="text-center my-4">
-                            <a href="{{ route('register') }}" class="">Quiero Registrarme</a>
+                            <a class="btn btn-success w-100" href="{{ route('register') }}" class="">Registrate y dale Like</a>
                         </div>
                     @endguest
                 </div>
             </div>
             {{-- @endforeach --}}
         @else
-            <h2 class="text-center">Registrate y publica</h2>
             <ul class="center gap-3">
-                <li class="link-menu"><a href="{{ route('register') }}" class="link text-center">Registrarme</a></li>
+                <li class=""><a href="{{ route('register') }}" class="link text-center">Registrate y publica tus productos</a></li>
             </ul>
         @endif
     </div>

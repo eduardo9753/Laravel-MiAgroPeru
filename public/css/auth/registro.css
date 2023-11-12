@@ -21,14 +21,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.contenido-registro-usuario .boton-registro-usuario {
-    width: 100%;
-    margin-top: 1rem;
-    padding: 5px;
-    background-color: var(--green);
-    color: var(--blanco);
 
-}
 
 .contenido-registro-usuario .caja-registro-usuario{
     border: 1px solid var(--green);
