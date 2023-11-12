@@ -133,7 +133,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card">
                         <div class="card-body">
                             <p class="card-text">Comparte tus productos para alcanzar a un público más
                                 amplio y promocionarlos en nuestra plataforma.</p>
@@ -170,7 +170,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card">
                         <div class="card-body">
                             <p class="card-text">Únete a nuestra comunidad en línea, donde puedes promocionar tus productos
                                 y seguir a otros emprendedores para mantenerte al tanto de las últimas novedades en
@@ -191,7 +191,7 @@
         </div>
     </section>
 
-    
+
     <section class="publicacion mt-5">
         <div class="mi-contenedor">
             <!--COMPONENTE ULTIMA PUBLICACION-->
