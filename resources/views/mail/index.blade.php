@@ -48,7 +48,7 @@
                             @enderror
                         </div>
 
-                        <div> <button type="submit" class="mi-boton boton-registro-usuario" id="">RECUPERAR
+                        <div> <button type="submit" class="btn btn-success w-100 mt-3" id="">RECUPERAR
                                 CONTRASEÑA</button></div>
                     </form>
                 </div>
