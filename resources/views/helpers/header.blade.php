@@ -44,7 +44,7 @@
                                             <ul class="menu-area-main">
                                                 <li class="active"> <a href="{{ route('home') }}">Home</a> </li>
                                                 <li><a href="{{ route('blog.index') }}">Noticias</a> </li>
-                                                <li><a href="#product">Products</a></li>
+                                                <li><a href="#product">Productos</a></li>
                                                 <li><a href="{{ route('register') }}">Registrarme</a></li>
                                                 <li><a href="{{ route('login') }}">Ingresar</a></li>
                                             </ul>

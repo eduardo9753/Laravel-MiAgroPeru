@@ -72,10 +72,8 @@
             {{-- RECORRIDO DE DATOS DE LAS PUBLICACIONES DE MIS SEGUIDORES --}}
             {{-- Y AGREGANDO EL COMPONENTE "listar-post" --}}
             <div class="col-md-6">
-                
-                        {{-- LIVEWIRE DINAMICO POR PAGINA --}}
-                        <livewire:posts />
-                    
+                {{-- LIVEWIRE DINAMICO POR PAGINA --}}
+                <livewire:posts />
             </div>
 
 
