@@ -73,7 +73,7 @@ Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.
 Route::get('/post/publicaciones', [PostController::class, 'publicacion'])->name('posts.publicacion');
 Livewire::component('posts', Posts::class);
 
-Route::get('/post/desarrollador', [PostController::class, 'desarrollador'])->name('posts.desarrollador');
+Route::get('/post/colaboradores', [PostController::class, 'team'])->name('posts.colaborador');
 
 
 /*COMENTARIOS*/
@@ -81,10 +81,10 @@ Route::post('/{username}/post/{id}', [ComentarioController::class, 'store'])->na
 Route::get('/comentario/fetch/comentarios', [ComentarioController::class, 'fetchComentario'])->name('comentarios.fetch');
 
 
-/*LIKES "en desuso"*/
+/*LIKES "en desuso"
 Route::post('/posts/{post}/likes', [LikeController::class, 'store'])->name('posts.likes.store');
 Route::delete('/posts/{post}/likes', [LikeController::class, 'destroy'])->name('posts.likes.destroy');
-
+*/
 
 /**PERFIL DEL USUARIO */
 Route::get('/editar/perfil', [PerfilController::class, 'index'])->name('perfil.index');

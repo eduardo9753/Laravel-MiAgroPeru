@@ -10,59 +10,62 @@
 
 
 @section('contenido')
-    <section class="registro-usuario relleno">
-        <div class="mi-contenedor">
-            <div class="flex-evenly contenido-registro-usuario">
-                <div class="registro-usuario-imagen espacio-arriba">
-                    <img class="" src="{{ asset('img/usuario/register-user.jpg') }}" alt="">
+    <section class="mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-md-5 mt-5">
+                    <div class="registro-usuario-imagen">
+                        <img class="" src="{{ asset('img/usuario/register-user.jpg') }}" alt="">
+                    </div>
                 </div>
 
-                <div class="registro-usuario-formulario">
+                <div class="col-md-7 mt-5">
                     <form action="{{ route('login') }}" method="POST" class="" novalidate>
                         {{-- TOKEN DE SEGURIDAD --}}
                         @csrf
 
                         {{-- MENSAJE SI ESTAN MAL LAS CREDENCIALES --}}
                         @if (session('mensaje'))
-                            <p class="error-registro-usuario">{{ session('mensaje') }}</p>
+                            <p class="text-danger">{{ session('mensaje') }}</p>
                         @endif
 
 
                         <div class="form-group">
                             <label for="email" class="label-registro">Email</label>
-                            <input type="email" id="email" name="email"
-                                class="caja-registro-usuario form-control w-100" type="text"
-                                placeholder="Tu Correo Electronico" autocomplete="off" value="{{ old('email') }}">
+                            <input type="email" id="email" name="email" class="form-control w-100 border-input"
+                                type="text" placeholder="Tu Correo Electronico" value="{{ old('email') }}">
                             {{-- VALIDACION CON VALIDATE --}}
                             @error('email')
-                                <p class="error-registro-usuario">{{ $message }}</p>
+                                <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
 
                         <div class="form-group">
                             <label for="password" class="label-registro">Password</label>
                             <input type="password" name="password" placeholder="*************" id="password"
-                                class="caja-registro-usuario form-control w-100" type="text" autocomplete="off">
+                                class="form-control w-100 border-input" type="text">
                             {{-- VALIDACION CON VALIDATE --}}
                             @error('password')
-                                <p class="error-registro-usuario">{{ $message }}</p>
+                                <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
 
                         <div class="mt-3 form-check">
-                            <input type="checkbox" name="remenber" class="form-check-input caja-registro-usuario"
-                                id="mantenerSession">
+                            <input type="checkbox" name="remenber" class="form-check-input" id="mantenerSession">
                             <label class="form-check-label" for="mantenerSession">Mantener mi Session</label>
                         </div>
 
 
-                        <div> <button type="submit" class="btn btn-success w-100 mt-3"
-                                id="">INGRESAR</button></div>
+                        <div> <button type="submit" class="btn btn-success w-100 mt-3" id="">INGRESAR</button>
+                        </div>
                     </form>
                 </div>
             </div>
-            <div class="text-center">
-                <p>No recuerdas? <a href="{{ route('mail.index') }}">Recuperar Contraseña</a></p>
+
+            <div class="d-flex justify-content-between mt-5">
+                <a href="{{ route('mail.index') }}" class="btn btn-outline-success">Recuperar Contraseña</a>
+                <a href="{{ route('home') }}" class="btn btn-success">Ir a Casa</a>
             </div>
         </div>
     </section>

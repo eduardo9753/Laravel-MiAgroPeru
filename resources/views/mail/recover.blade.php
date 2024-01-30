@@ -10,14 +10,16 @@
 
 
 @section('contenido')
-    <section class="registro-usuario relleno">
-        <div class="mi-contenedor">
-            <div class="flex-evenly contenido-registro-usuario">
-                <div class="registro-usuario-imagen espacio-arriba">
-                    <img class="" src="{{ asset('img/usuario/register-user.jpg') }}" alt="">
+    <section class="mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 mt-5">
+                    <div class="registro-usuario-imagen">
+                        <img class="" src="{{ asset('img/usuario/register-user.jpg') }}" alt="">
+                    </div>
                 </div>
 
-                <div class="registro-usuario-formulario">
+                <div class="col-md-7">
                     <form action="{{ route('mail.update') }}" method="POST" class="" novalidate>
                         {{-- TOKEN DE SEGURIDAD --}}
                         @csrf
@@ -32,32 +34,32 @@
                         <div class="form-group">
                             <label for="email" class="label-registro">Digite su Email</label>
                             <input type="email" id="email" name="email"
-                                class="caja-registro-usuario form-control w-100" placeholder="Tu Correo Electronico"
+                                class="border-input form-control w-100" placeholder="Tu Correo Electronico"
                                 autocomplete="off" value="{{ old('email') }}">
                             {{-- VALIDACION CON VALIDATE --}}
                             @error('email')
-                                <p class="error-registro-usuario">{{ $message }}</p>
+                                <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
 
                         <div class="form-group">
                             <label for="password" class="label-registro">Nuevo Password</label>
                             <input type="password" name="password" placeholder="*************" id="password"
-                                class="caja-registro-usuario form-control w-100" autocomplete="off">
+                                class="border-input form-control w-100" autocomplete="off">
                             {{-- VALIDACION CON VALIDATE --}}
                             @error('password')
-                                <p class="error-registro-usuario">{{ $message }}</p>
+                                <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
 
                         <div class="form-group">
                             <label for="password_confirmation" class="label-registro">Repetir Password</label>
                             <input type="password" name="password_confirmation" placeholder="*************"
-                                id="password_confirmation" class="caja-registro-usuario form-control w-100"
+                                id="password_confirmation" class="border-input form-control w-100"
                                 autocomplete="off">
                             {{-- VALIDACION CON VALIDATE --}}
                             @error('password_confirmation')
-                                <p class="error-registro-usuario">{{ $message }}</p>
+                                <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
 
@@ -67,6 +69,10 @@
                 </div>
             </div>
 
+            <div class="d-flex justify-content-between mt-5">
+                <a href="{{ route('register') }}" class="btn btn-outline-success">Registrarme</a>
+                <a href="{{ route('home') }}" class="btn btn-success">Ir a Casa</a>
+            </div>
         </div>
     </section>
 @endsection

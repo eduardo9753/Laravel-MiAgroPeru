@@ -128,7 +128,7 @@ class PostController extends Controller
     }
 
     //VISTA DESARROLALDOR 
-    public function desarrollador()
+    public function team()
     {
         return view('usuario.posts.dev');
     }

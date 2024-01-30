@@ -1,7 +1,0 @@
-
-/*ARRANCA DESDE EL MINIMO 0PX DE ANCHO HASTA EL MAXIMO DE 460PX DE ANCHO*/
-@media (min-width: 0px) and (max-width: 800px){ 
-    #busacdor .grid-follower {
-        grid-template-columns: repeat(2,1fr);
-    }
-}

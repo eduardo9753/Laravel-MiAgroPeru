@@ -1,13 +1,13 @@
 <div>
     {{-- Stop trying to control. --}}
     @foreach ($posts as $post)
-        <div class="contenido-publicacion">
-            <div class="descripcion-imagen">
+        <div class="mb-5 p-3 fondo-publicaciones">
+            <div class="text-center">
                 <a href="{{ route('posts.show', ['user' => $post->user, 'post' => $post]) }}" class="center">
-                    <img class="img-publicacion" src="{{ asset('uploads') . '/' . $post->imagen }}"
+                    <img class="imagen-publicaciones" src="{{ asset('uploads') . '/' . $post->imagen }}"
                         alt="Imagen del post {{ $post->titulo }}">
                 </a>
-                <div class="flex-between py-3">
+                <div class="d-flex justify-content-between align-items-center">
                     <div class="">
                         {{-- SOLO LOS QUE ESTEN AUNTENTICADOS PODRAN DAR LIKE --}}
                         @auth
@@ -18,7 +18,8 @@
 
                     <div>
                         <a href="{{ route('posts.show', ['user' => $post->user, 'post' => $post]) }}" class="center">
-                            <i class='bx bx-message-rounded-dots bx-tada'>{{ $post->comentarios->count() }}</i>
+                            <i style="font-size: 20px"
+                                class='bx bx-message-rounded-dots bx-tada'>{{ $post->comentarios->count() }}</i>
                         </a>
                     </div>
 
@@ -26,33 +27,35 @@
                 </div>
             </div>
 
-            <div class="descripcion-publicacion">
+            <div class="mt-3">
                 <div class="d-flex">
-                    <span class=""><i class='bx bx-building-house'></i></span>
-                    <p class="">{{ $post->user->name }}</p>
+                    <span class=""><i class='bx bx-building-house' style="font-size: 25px;"></i></span>
+                    <a href=" {{ route('posts.index', $post->user) }}">
+                        {{ $post->user->name }}</a>
                 </div>
 
                 <div class="d-flex">
-                    <span class=""><i class='bx bxl-whatsapp' style='color:#23e259'></i></span>
+                    <span class=""><i class='bx bxl-whatsapp bx-tada'
+                            style='color:#23e259; font-size: 25px'></i></span>
                     <a target="_blank"
                         href="https://wa.me/51{{ $post->user->celular }}?text=Quisiera más información del producto - Nombre:{{ $post->titulo }} - {{ $post->descripcion }}"
                         class="boton texto-boton-general ">{{ $post->user->celular }}</a>
                 </div>
 
                 <div class="d-flex">
-                    <span class=""><i class='bx bx-user'></i></span>
+                    <span class=""><i class='bx bx-user' style="font-size: 25px;"></i></span>
                     <a href=" {{ route('posts.index', $post->user) }}">
                         {{ $post->user->username }}</a>
                 </div>
 
                 <div class="d-flex">
-                    <span class=""><i class='bx bxl-product-hunt' undefined></i></span>
+                    <span class=""><i class='bx bxl-product-hunt' style="font-size: 25px;" undefined></i></span>
                     <p> {{ $post->titulo }}</p>
                 </div>
 
-                <div class="d-flex">
-                    <span class="">S/</span>
-                    <p> {{ $post->precio }}</p>
+                <div class="d-flex align-items-center">
+                    <span style="font-size: 25px;">S/</span>
+                    <p style="font-size: 25px;"> {{ $post->precio }}</p>
                 </div>
 
                 <div class="">
@@ -68,7 +71,8 @@
     @if ($posts->count() < $this->perPage)
         <div class="card">
             <div class="card-body">
-                <p>Fin de las publicaciones. Sigue a más usuarios para mantenerte al día con sus productos y novedades.</p>
+                <p>Fin de las publicaciones. Sigue a más usuarios para mantenerte al día con sus productos y novedades.
+                </p>
             </div>
         </div>
     @else

@@ -8,215 +8,408 @@
 
 
 
-@section('header')
-    <div id="" class="header">
-        <div class="mi-contenedor header-descripcion">
-            <h1 class="espacio-arriba">MiAgroPeru - La plataforma de los agricultores peruanos</h1>
-            <p class="mt-5 mb-3">Una iniciativa que impulsa los productos de nuestros agricultores peruanos.
-                Regístrate en nuestro portal y comparte tus productos para que puedan ponerse en contacto contigo.
-            </p>
-            @guest
-                <a href="{{ route('register') }}" class="btn btn-success btn-lg">Quiero Registrarme</a>
-            @endguest
-        </div>
-    </div>
-@endsection
-
-
 
 @section('contenido')
-    <section id="nosotros" class="nosotros">
-        <div class="mi-contenedor">
-            <div class="flex-evenly">
-                <div class="descripcion-nosotros">
-                    <h2 class="titulo-nosotros text-center py-3">MiAgroPeru</h2>
-                    <div class="d-flex">
-                        <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
-                        <p>Inscríbete en nuestra plataforma</p>
-                    </div>
-                    <div class="d-flex">
-                        <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
-                        <p>Ingresa tus datos personales</p>
-                    </div>
-                    <div class="d-flex">
-                        <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
-                        <p>Presenta tus productos en nuestro sitio web</p>
-                    </div>
-                    <div class="d-flex">
-                        <span class="check-nosotros"><i class='bx bx-check bx-tada bx-rotate-90'></i></span>
-                        <p>Comunicación directa con tus potenciales compradores</p>
+    <!-- header -->
+    @include('helpers.header')
+    <!-- end header -->
+
+
+    <section class="slider_section">
+        <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="first-slide" src="{{ asset('img/carousel/carousel_1.jpg') }}" alt="First slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <h1>Registrate</h1>
+                            <span>EN MIAGROPERU</span>
+
+                            <p><strong>La plataforma de los agricultores peruanos.</strong> Regístrate, publica tus
+                                productos y conecta con
+                                más peruanos.</p>
+                            <a class="buynow" href="{{ route('login') }}">Ingresar</a><a class="buynow ggg"
+                                href="{{ route('register') }}">Registrarme</a>
+                        </div>
                     </div>
                 </div>
+                <div class="carousel-item">
+                    <img class="second-slide" src="{{ asset('img/carousel/carousel_2.jpg') }}" alt="Second slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <h1>Publica</h1>
+                            <span>EN MIAGROPERU</span>
 
-                <div class="imagen-nosotros">
-                    <img src="https://images.pexels.com/photos/4207910/pexels-photo-4207910.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        class="imagen-nosotros" alt="">
+                            <p>Comparte tus productos para alcanzar a un público más amplio y promocionarlos en nuestra
+                                plataforma.</p>
+                            <a class="buynow" href="{{ route('login') }}">Ingresar</a><a class="buynow ggg"
+                                href="{{ route('register') }}">Registrarme</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="third-slide" src="{{ asset('img/carousel/carousel_3.jpg') }}" alt="Third slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <h1>Enlaza</h1>
+                            <span>EN MIAGROPERU</span>
+
+                            <p>Sigue a nuevos usuarios para mantenerte actualizado con productos novedosos de diversos
+                                sectores y rangos de precios.</p>
+                            <a class="buynow" href="{{ route('login') }}">Ingresar</a><a class="buynow ggg"
+                                href="{{ route('register') }}">Registrarme</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <i class='fa fa-angle-left'></i>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <i class='fa fa-angle-right'></i>
+            </a>
         </div>
     </section>
 
 
-    <section>
-        <div class="" id="contenido-bloques">
-            <div class="mi-contenedor">
+    <!-- about -->
+    <div id="about" class="about">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                    <div class="about_box">
+                        <h2>miagroperu<br><strong class="black">plataforma de agricultura</strong></h2>
+                        <p>Una iniciativa que impulsa los productos de <strong>nuestros agricultores peruanos</strong>.
+                            Regístrate en nuestro
+                            portal y comparte tus productos para que puedan ponerse en contacto contigo.</p>
+                        <a href="{{ route('register') }}">Registrarme</a>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                    <div class="about_img">
+                        <figure><img src="{{ asset('img/home/about.png') }}" alt="img" /></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end about -->
+
+
+    <!-- for_box -->
+    <div class="for_box_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 co-sm-l2">
+                    <div class="for_box">
+                        <i><img src="{{ asset('img/home/1.png') }}" alt="#" /></i>
+                        <span>+</span>
+                        <h3>agricultura</h3>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 co-sm-l2">
+                    <div class="for_box">
+                        <i><img src="{{ asset('img/home/2.png') }}" alt="#" /></i>
+                        <span>+</span>
+                        <h3>ganado</h3>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 co-sm-l2">
+                    <div class="for_box">
+                        <i><img src="{{ asset('img/home/3.png') }}" alt="#" /></i>
+                        <span>+</span>
+                        <h3>frutas y vegetales</h3>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 co-sm-l2">
+                    <div class="for_box">
+                        <i><img src="{{ asset('img/home/4.png') }}" alt="#" /></i>
+                        <span>+</span>
+                        <h3>desde el campo</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end for_box -->
+
+
+    <!-- offer -->
+    <div class="offer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>Productos <strong class="black"> Peruanos</strong></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offer-bg">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <div class="mi-card">
-                            <div class="mi-card-content">
-                                <h2 class="contenido-bloques-titulo">Registrate!</h2>
-                                <div class="text-center">
-                                    <img class="imagen" src="https://cdn-icons-png.flaticon.com/512/4116/4116368.png"
-                                        alt="">
-                                </div>
-                                <p class="contenido-bloques-parrafo">Regístrate proporcionando tus datos personales en
-                                    nuestra plataforma para disfrutar de la red social de MiagroPerú y acceder a una
-                                    variedad de servicios.</p>
-                            </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 ">
+                        <div class="offer_box">
+                            <h3>Productos de agricultura</h3>
+                            <figure><img src="{{ asset('img/home/offer1.png') }}" alt="img" /></figure>
+                            <p>Productos agrícolas cultivados por manos peruanas, apoyamos al talento nacional</p>
                         </div>
                     </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="mi-card">
-                            <div class="mi-card-content">
-                                <h2 class="contenido-bloques-titulo">Publica!</h2>
-                                <div class="text-center">
-                                    <img class="imagen" src="https://cdn-icons-png.flaticon.com/512/8644/8644426.png"
-                                        alt="">
-                                </div>
-                                <p class="contenido-bloques-parrafo">Comparte tus productos para alcanzar a un público más
-                                    amplio y promocionarlos en nuestra plataforma.</p>
-                            </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margin_ttt">
+                        <div class="offer_box">
+                            <h3>Verduras y Vegetales</h3>
+                            <figure><img src="{{ asset('img/home/offer2.png') }}" alt="img" /></figure>
+                            <p>Verduras, vegetales y más para el consumo de tu hogar, cultivados por agricultores peruanos.
+                            </p>
                         </div>
                     </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="mi-card">
-                            <div class="mi-card-content">
-                                <h2 class="contenido-bloques-titulo">Enlaza!</h2>
-                                <div class="text-center">
-                                    <img class="imagen" src="https://cdn-icons-png.flaticon.com/512/3201/3201615.png"
-                                        alt="">
-                                </div>
-                                <p class="contenido-bloques-parrafo">Sigue a nuevos usuarios para mantenerte actualizado con
-                                    productos novedosos de diversos sectores y rangos de precios.</p>
-                            </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margin-lkk">
+                        <div class="offer_box">
+                            <h3>Campos Peruanos</h3>
+                            <figure><img src="{{ asset('img/home/offer3.png') }}" alt="img" /></figure>
+                            <p>Apoyando el crecimiento de los agricultores peruanos y ofreciendo lo mejor del campo</p>
                         </div>
                     </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="mi-card">
-                            <div class="mi-card-content">
-                                <h2 class="contenido-bloques-titulo">Busca Productos!</h2>
-                                <div class="text-center">
-                                    <img class="imagen" src="https://cdn-icons-png.flaticon.com/512/3649/3649291.png"
-                                        alt="">
-                                </div>
-                                <p class="contenido-bloques-parrafo">Explora productos de tu interés y obtén acceso a la
-                                    información de contacto de la persona que los publicó en la plataforma.</p>
-                            </div>
+
+                    <div class="col-md-12">
+                        <a href="{{ route('register') }}" class="read-more">Registrarme</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end offer -->
+
+
+    <!-- product -->
+    <div id="product" class="product">
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title">
+                            <h2>Más <strong class="black"> productos</strong></h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-
-    <section id="nosotros" class="nosotros">
-        <div class="mi-contenedor">
+        <div class="container">
             <div class="row">
-                <div class="col-md-9 mb-3">
-                    <div class="mi-card">
-                        <div class="mi-card-content">
-                            <div class="text-center">
-                                <img style="width: 100%" src="https://i.postimg.cc/66m64V82/union.png" alt="">
+                @foreach ($posts as $post)
+                    <div class="col-md-4">
+                        <a href="{{ route('posts.show', ['user' => $post->user, 'post' => $post]) }}">
+                            <div class="product_box">
+                                <figure>
+                                    <img src="{{ asset('uploads/' . $post->imagen) }}" alt="#" />
+                                    <h3>{{ $post->titulo }}</h3>
+                                </figure>
                             </div>
-                        </div>
+                        </a>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-text">Comparte tus productos para alcanzar a un público más
-                                amplio y promocionarlos en nuestra plataforma.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
-    </section>
+    </div>
+    <!-- end product -->
 
 
-
-    <section class="fondo-agricultura" id="fondo-agricultura">
-        <div class="mi-contenedor">
-            <div class="">
-                <h3 class="titulo-fondo-agricultura">Lo mejor de la <span class="">Agricultura
-                        Peruana</span></h3>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section id="nosotros" class="nosotros">
-        <div class="mi-contenedor">
+    <!-- clients -->
+    <div id="testimonial" class="clients">
+        <div class="container">
             <div class="row">
-                <div class="col-md-9 mb-3">
-                    <div class="mi-card">
-                        <div class="mi-card-content">
-                            <div class="text-center">
-                                <img style="width: 100%" src="https://i.postimg.cc/j2b5gP7Q/union-dos.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-text">Únete a nuestra comunidad en línea, donde puedes promocionar tus productos
-                                y seguir a otros emprendedores para mantenerte al tanto de las últimas novedades en
-                                productos y precios.</p>
-                        </div>
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>testimonial</h2>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
+    <div class="clients_red">
+        <div class="container">
+            <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#testimonial_slider" data-slide-to="0" class=""></li>
+                    <li data-target="#testimonial_slider" data-slide-to="1" class="active"></li>
+                    <li data-target="#testimonial_slider" data-slide-to="2" class=""></li>
+                </ul>
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <div class="testomonial_section">
 
-    <section class="" id="buscador">
-        <div class="mi-contenedor">
-            <h3>Buscar Productos</h3>
-            {{-- COMPONENTE LIVEWIRE BUSCADOR --}}
-            @livewire('search')
+                            <div class="full testimonial_cont text_align_center cross_layout">
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 pa_right">
+                                        <div class="testomonial_img">
+                                            <i><img src="{{ asset('img/logos/logo.png') }}" alt="#" /></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 pa_left">
+                                        <div class="cross_inner">
+                                            <h3>adkadan<br><strong class="ornage_color">usuario - miagroperu</strong></h3>
+                                            <p><img src="{{ asset('icon/1.png') }}" alt="#" />Una plataforma
+                                                destacada para respaldar a los agricultores de manera efectiva.
+                                                <img src="{{ asset('icon/2.png') }}" alt="#" />
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item active">
+
+                        <div class="testomonial_section">
+                            <div class="full center">
+                            </div>
+                            <div class="full testimonial_cont text_align_center cross_layout">
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 pa_right">
+                                        <div class="testomonial_img">
+                                            <i><img src="{{ asset('img/logos/logo.png') }}" alt="#" /></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 pa_left">
+                                        <div class="cross_inner">
+                                            <h3>sagasyuzz<br><strong class="ornage_color">usuario - miagroperu</strong>
+                                            </h3>
+                                            <p><img src="{{ asset('icon/1.png') }}" alt="#" />Una excelente página
+                                                para subir y promocionar cualquier producto del campo.
+                                                <img src="{{ asset('icon/2.png') }}" alt="#" />
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="carousel-item">
+
+                        <div class="testomonial_section">
+                            <div class="full center">
+                            </div>
+                            <div class="full testimonial_cont text_align_center cross_layout">
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 pa_right">
+                                        <div class="testomonial_img">
+                                            <i><img src="{{ asset('img/logos/logo.png') }}" alt="#" /></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 pa_left">
+                                        <div class="cross_inner">
+                                            <h3>jordy<br><strong class="ornage_color">usuario - miagroperu</strong></h3>
+                                            <p><img src="{{ asset('icon/1.png') }}" alt="#" />Un gran respaldo
+                                                para los agricultores, permitiéndoles promocionar sus productos en línea.
+                                                <img src="{{ asset('icon/2.png') }}" alt="#" />
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
-    </section>
+    </div>
+    <!-- end clients -->
 
 
-    <section class="publicacion mt-5">
-        <div class="mi-contenedor">
-            <!--COMPONENTE ULTIMA PUBLICACION-->
-            <x-ultimo-post :ultimoPost="$ultimoPost" />
+    <!-- contact -->
+    <div id="contact" class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>¿sugerencias?<strong class="black"> escribenos</strong></h2>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+
+    <div class="container-fluid padddd">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 padddd">
+            <div class="map_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+                            <form class="main_form">
+                                <div class="row">
+
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Nombres" type="text" name="Nombres">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Email" type="text" name="Email">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Celular" type="text" name="Celular">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <button class="send">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="map">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end contact -->
+
+
+    <!-- javascript -->
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".fancybox").fancybox({
+                openEffect: "none",
+                closeEffect: "none"
+            });
+
+            $(".zoom").hover(function() {
+
+                $(this).addClass('transition');
+            }, function() {
+
+                $(this).removeClass('transition');
+            });
+        });
+    </script>
 @endsection
 
 
 
 @section('footer')
-    @guest
-        <footer>
-            <nav class="navegacion">
-                <div class="mi-contenedor flex-between">
-                    <div class="logo">
-                        <a href="{{ route('home') }}"><img src="{{ asset('img/logos/logo.png') }}" alt=""></a>
-                    </div>
-
-                    <ul class="flex-between gap-3">
-                        <li class="link-menu"><a href="{{ route('login') }}" class="">Login</a></li>
-                        <li class="link-menu"><a href="{{ route('register') }}" class="">Registrarme</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </footer>
-    @endguest
+    <!-- footer -->
+    @include('helpers.footer')
+    <!--  footer -->
 @endsection

@@ -9,98 +9,6 @@ ul{ margin: 0 !important;}
 
 p{ margin-bottom: 0px !important;}
 
-
-/*CONTENEDOR*/
-.mi-contenedor{
-    width: 90%;
-    max-width: 1280px;
-    margin: auto;
-}
-
-.flex-between{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.flex-evenly{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.flex-around{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.entre {
-    display: flex;
-    justify-content: center;
-}
-
-.item-center{ align-items: center;}
-
-.mi-flex{ display: flex; align-items: center;}
-
-.grid-dos {
-    display: grid;
-    grid-template-columns: repeat(2,2fr);
-}
-
-.grid-tres {
-    display:  grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 1rem;
-}
-
-.grid-cuatro {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 3rem;
-}
-
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.espacio-arriba-titulos { padding-top: 4.5rem !important;}
-.texto-centrado{ text-align: center;}
-.padding-arriba {padding-top: 3.7rem;}
-.espacio-arriba { margin-top: 4rem !important;}
-.espacio-entre { gap: 3rem; padding-top: 3.3rem;}
-.relleno { padding: 50px 0px 50px 0px;}
-
-
-.gris { background-color: var(--gris); border-radius: 10px;}
-
-
-
-.color-blanco {background-color: rgb(255, 255, 255);}
-.color-verde {
-    background-color: var(--green);
-    color: var(--blanco);
-    margin-top: 10px;
-}
-
-.azul {background-color: var(--azul);}
-.rojo {background-color: var(--rojo);}
-.text-blanco {color: var(--blanco); border-radius: 25px;}
-
-.crear:hover{
-    color: var(--blanco);
-    background-color: var(--azul);
-}
-
-.salir:hover{
-    color: var(--blanco);
-    background-color: var(--rojo);
-}
-
-
 .mensaje{
     width: 100%;
     background-color: var(--green);
@@ -116,40 +24,45 @@ p{ margin-bottom: 0px !important;}
 .imagen-comentario {
    width: 20px;
    height: 20px;
+   border-radius: 50%;
 }
 
-/*ESTILO IMAGEN HOME*/
-.imagen-home {
-    width: 200px;
-    height: 200px;
+.comentarios-altura {
+   max-height: 300px;
+   overflow: scroll;
+   margin-top: 20px;
+}
+
+.imagen-publicaciones {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    text-align: center;
-    margin: auto;
-    object-fit: cover;
-}
-
-.tiempo-comentario {
-    font-size: 13px;
-    font-weight: bold;
-    font-family: 'Times New Roman', Times, serif
-}
-
-.descripcion-comentario {
-    font-size: 14px;
-    font-family: 'Times New Roman', Times, serif
-}
+ }
 
 
-.comentarios-tamanio { width: 100%;}
-.comentarios-borde { border-bottom: 1px solid var(--gris); padding: 4px;}
-.comentarios-altura {max-height: 350px; overflow: scroll; margin-top: 2rem;}
-
-.tamanio-letra-logo { size: 34px;}
-.tamanio-icon { font-size: 34px;}
-
+ .imagen-usuario {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+ }
 
 
-.estilo-dev { font-weight: bold; }
+ .imagen-show{
+   width: 350px;
+   height: 350px;
+ }
 
-/*PARA QUITAR EL MARGIN EN UL DEL MISMO BOOSTRAP*/
-ol, ul { padding-left: 0rem !important; }
+
+ .border-input { border: 1px solid var(--green);}
+
+ .fondo-publicaciones{
+   padding: 1.4rem;
+   background-color: var(--gris);
+   border-radius: 10px;
+   margin-bottom: 30px
+ }
+ 
+ .imagen-logo {
+   width: 80px;
+   height: 60px;
+ }

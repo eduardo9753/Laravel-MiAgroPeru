@@ -17,13 +17,11 @@ class HomeController extends Controller
     //METODO __invoke : SE MANDA A LLAMAR AUTOMATICAMNETE
     public function __invoke()
     {
-        $ultimoPost = Post::select('*')->orderBy('id', 'desc')->first();
-        //CONTANDO LOS LIKES EN FUNCION DEL ULTIMO POST REGISTRADO EN LA BD
-        //$like = DB::table('likes')->where('post_id', optional($ultimoPost->id))->count();
+        $posts = Post::latest()->take(9)->get();
 
         $weather = Weather::Api();
         return view('visitador.home', [
-            'ultimoPost' => $ultimoPost
+            'posts' => $posts
             //  'like' => $like
         ]);
     }
